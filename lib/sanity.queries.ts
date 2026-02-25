@@ -3,6 +3,7 @@ import { Exhibition, PressItem, TeamMember } from '@/types';
 
 // Exhibition Queries
 export async function getExhibitions(locale: 'en' | 'zh'): Promise<Exhibition[]> {
+  if (!client) return [];
   const query = `*[_type == "exhibition"] | order(startDate desc) {
     _id,
     "id": _id,
@@ -37,6 +38,7 @@ export async function getExhibitions(locale: 'en' | 'zh'): Promise<Exhibition[]>
 }
 
 export async function getExhibitionBySlug(slug: string, locale: 'en' | 'zh'): Promise<Exhibition | null> {
+  if (!client) return null;
   const query = `*[_type == "exhibition" && slug.current == $slug][0] {
     _id,
     "id": _id,
@@ -71,6 +73,7 @@ export async function getExhibitionBySlug(slug: string, locale: 'en' | 'zh'): Pr
 }
 
 export async function getFeaturedExhibitions(locale: 'en' | 'zh'): Promise<Exhibition[]> {
+  if (!client) return [];
   const query = `*[_type == "exhibition" && featured == true] | order(startDate desc) {
     _id,
     "id": _id,
@@ -106,6 +109,7 @@ export async function getFeaturedExhibitions(locale: 'en' | 'zh'): Promise<Exhib
 
 // Press Queries
 export async function getPressItems(locale: 'en' | 'zh'): Promise<PressItem[]> {
+  if (!client) return [];
   const query = `*[_type == "press"] | order(publishDate desc) {
     _id,
     "id": _id,
@@ -136,6 +140,7 @@ export async function getPressItems(locale: 'en' | 'zh'): Promise<PressItem[]> {
 }
 
 export async function getPressItemBySlug(slug: string, locale: 'en' | 'zh'): Promise<PressItem | null> {
+  if (!client) return null;
   const query = `*[_type == "press" && slug.current == $slug][0] {
     _id,
     "id": _id,
@@ -167,6 +172,7 @@ export async function getPressItemBySlug(slug: string, locale: 'en' | 'zh'): Pro
 
 // Team Member Queries
 export async function getTeamMembers(locale: 'en' | 'zh'): Promise<TeamMember[]> {
+  if (!client) return [];
   const query = `*[_type == "teamMember"] | order(order asc) {
     _id,
     "id": _id,
@@ -190,3 +196,4 @@ export async function getTeamMembers(locale: 'en' | 'zh'): Promise<TeamMember[]>
     return [];
   }
 }
+
