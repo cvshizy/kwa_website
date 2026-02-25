@@ -13,7 +13,8 @@
       "title": "KWM艺术中心",
       "subtitle": "当代艺术空间"
     },
-    "featuredExhibitions": "特色展览"
+    "featuredExhibitions": "特色展览",
+    "viewAll": "查看全部 →"
   },
   "exhibitions": {
     "title": "展览",
@@ -21,11 +22,14 @@
     "current": "正在展出",
     "past": "过去展览",
     "viewDetails": "查看详情",
-    "relatedExhibitions": "相关展览"
+    "relatedExhibitions": "相关展览",
+    "backToExhibitions": "← 返回展览列表",
+    "noExhibitions": "暂无展览"
   },
   "press": {
     "title": "媒体",
-    "readMore": "阅读更多"
+    "readMore": "阅读更多",
+    "backToPress": "← 返回媒体列表"
   },
   "team": {
     "title": "我们的团队"
@@ -50,6 +54,7 @@
   },
   "footer": {
     "rights": "版权所有",
+    "quickLinks": "快速链接",
     "openingHours": "开放时间",
     "mondayToFriday": "周一至周五",
     "saturday": "周六",

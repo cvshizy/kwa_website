@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -6,43 +6,44 @@ type Props = {
 
 export default async function CareersPage({ params }: Props) {
   const { locale } = await params;
+  unstable_setRequestLocale(locale);
 
   const t = await getTranslations('careers');
 
   // Mock job listings - would come from CMS in production
   const jobs = locale === 'zh'
     ? [
-        {
-          id: 1,
-          title: '策展助理',
-          department: '策展部',
-          type: '全职',
-          description: '协助策展人组织和管理展览项目，包括艺术家沟通、展览筹备和文档管理。'
-        },
-        {
-          id: 2,
-          title: '教育项目协调员',
-          department: '教育部',
-          type: '全职',
-          description: '开发和实施艺术教育项目，包括工作坊、讲座和学校合作项目。'
-        }
-      ]
+      {
+        id: 1,
+        title: '策展助理',
+        department: '策展部',
+        type: '全职',
+        description: '协助策展人组织和管理展览项目，包括艺术家沟通、展览筹备和文档管理。'
+      },
+      {
+        id: 2,
+        title: '教育项目协调员',
+        department: '教育部',
+        type: '全职',
+        description: '开发和实施艺术教育项目，包括工作坊、讲座和学校合作项目。'
+      }
+    ]
     : [
-        {
-          id: 1,
-          title: 'Curatorial Assistant',
-          department: 'Curatorial Department',
-          type: 'Full-time',
-          description: 'Assist curators in organizing and managing exhibition projects, including artist communication, exhibition preparation, and documentation.'
-        },
-        {
-          id: 2,
-          title: 'Education Programs Coordinator',
-          department: 'Education Department',
-          type: 'Full-time',
-          description: 'Develop and implement art education programs, including workshops, lectures, and school partnership projects.'
-        }
-      ];
+      {
+        id: 1,
+        title: 'Curatorial Assistant',
+        department: 'Curatorial Department',
+        type: 'Full-time',
+        description: 'Assist curators in organizing and managing exhibition projects, including artist communication, exhibition preparation, and documentation.'
+      },
+      {
+        id: 2,
+        title: 'Education Programs Coordinator',
+        department: 'Education Department',
+        type: 'Full-time',
+        description: 'Develop and implement art education programs, including workshops, lectures, and school partnership projects.'
+      }
+    ];
 
   const intro = locale === 'zh'
     ? '加入我们的团队，共同推动当代艺术的发展。我们寻找充满热情、富有创意的人才。'

@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -6,6 +6,7 @@ type Props = {
 
 export default async function AboutPage({ params }: Props) {
   const { locale } = await params;
+  unstable_setRequestLocale(locale);
 
   const t = await getTranslations('about');
 

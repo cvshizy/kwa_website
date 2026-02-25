@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import TeamMemberCard from '@/components/team/TeamMemberCard';
 import { getTeamMembers } from '@/lib/data';
 
@@ -8,6 +8,7 @@ type Props = {
 
 export default async function OurTeamPage({ params }: Props) {
   const { locale } = await params;
+  unstable_setRequestLocale(locale);
 
   const t = await getTranslations('team');
 

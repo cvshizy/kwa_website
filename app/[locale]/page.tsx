@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
 import { getFeaturedExhibitions } from '@/lib/data';
@@ -9,6 +9,7 @@ type Props = {
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
+  unstable_setRequestLocale(locale);
 
   const t = await getTranslations('home');
   const tCommon = await getTranslations('common');
@@ -46,7 +47,7 @@ export default async function Home({ params }: Props) {
             href="/exhibitions"
             className="text-sm text-gray-600 hover:text-black transition-colors"
           >
-            View All →
+            {t('viewAll')}
           </Link>
         </div>
         <ExhibitionGrid exhibitions={featuredExhibitions} />

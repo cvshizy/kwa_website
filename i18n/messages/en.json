@@ -13,7 +13,8 @@
       "title": "KWM Art Center",
       "subtitle": "Contemporary Art Space"
     },
-    "featuredExhibitions": "Featured Exhibitions"
+    "featuredExhibitions": "Featured Exhibitions",
+    "viewAll": "View All →"
   },
   "exhibitions": {
     "title": "Exhibitions",
@@ -21,11 +22,14 @@
     "current": "Current",
     "past": "Past",
     "viewDetails": "View Details",
-    "relatedExhibitions": "Related Exhibitions"
+    "relatedExhibitions": "Related Exhibitions",
+    "backToExhibitions": "← Back to Exhibitions",
+    "noExhibitions": "No exhibitions found"
   },
   "press": {
     "title": "Press",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "backToPress": "← Back to Press"
   },
   "team": {
     "title": "Our Team"
@@ -50,6 +54,7 @@
   },
   "footer": {
     "rights": "All rights reserved",
+    "quickLinks": "Quick Links",
     "openingHours": "Opening Hours",
     "mondayToFriday": "Mon - Fri",
     "saturday": "Saturday",

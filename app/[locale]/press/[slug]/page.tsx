@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getPressItems, getPressItemBySlug } from '@/lib/data';
 
 type Props = {
@@ -17,6 +17,7 @@ export async function generateStaticParams() {
 
 export default async function PressDetailPage({ params }: Props) {
   const { locale, slug } = await params;
+  unstable_setRequestLocale(locale);
 
   const press = await getPressItemBySlug(slug, locale as 'en' | 'zh');
 
@@ -25,6 +26,7 @@ export default async function PressDetailPage({ params }: Props) {
   }
 
   const currentLocale = locale as 'en' | 'zh';
+  const t = await getTranslations('press');
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -72,7 +74,7 @@ export default async function PressDetailPage({ params }: Props) {
               href="/press"
               className="inline-block text-sm text-gray-600 hover:text-black transition-colors"
             >
-              ← Back to Press
+              {t('backToPress')}
             </Link>
           </div>
         </div>

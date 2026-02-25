@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import PressCard from '@/components/press/PressCard';
 import { getPressItems } from '@/lib/data';
 
@@ -8,6 +8,7 @@ type Props = {
 
 export default async function PressPage({ params }: Props) {
   const { locale } = await params;
+  unstable_setRequestLocale(locale);
 
   const t = await getTranslations('press');
   const pressItems = await getPressItems(locale as 'en' | 'zh');

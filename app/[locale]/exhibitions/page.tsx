@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
 import ExhibitionFilter from '@/components/exhibitions/ExhibitionFilter';
 import { getExhibitions } from '@/lib/data';
@@ -10,6 +10,7 @@ type Props = {
 
 export default async function ExhibitionsPage({ params, searchParams }: Props) {
   const { locale } = await params;
+  unstable_setRequestLocale(locale);
   const { status } = await searchParams;
 
   const t = await getTranslations('exhibitions');

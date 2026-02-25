@@ -9,7 +9,8 @@ import * as sanity from './sanity.queries';
 // Check if Sanity is configured
 const isSanityConfigured =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID &&
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID !== 'your_project_id';
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID !== 'your_project_id' &&
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID !== 'placeholder';
 
 // Exhibition functions
 export async function getExhibitions(locale: 'en' | 'zh'): Promise<Exhibition[]> {

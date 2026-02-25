@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getExhibitionBySlug, getExhibitions } from '@/lib/data';
 import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
 
@@ -18,6 +18,7 @@ export async function generateStaticParams() {
 
 export default async function ExhibitionDetailPage({ params }: Props) {
   const { locale, slug } = await params;
+  unstable_setRequestLocale(locale);
 
   const exhibition = await getExhibitionBySlug(slug, locale as 'en' | 'zh');
 
@@ -79,7 +80,7 @@ export default async function ExhibitionDetailPage({ params }: Props) {
               href="/exhibitions"
               className="inline-block text-sm text-gray-600 hover:text-black transition-colors"
             >
-              ← Back to Exhibitions
+              {t('backToExhibitions')}
             </Link>
           </div>
         </div>

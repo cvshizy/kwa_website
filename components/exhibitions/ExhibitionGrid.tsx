@@ -1,3 +1,6 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import { Exhibition } from '@/types';
 import ExhibitionCard from './ExhibitionCard';
 
@@ -6,10 +9,12 @@ interface ExhibitionGridProps {
 }
 
 export default function ExhibitionGrid({ exhibitions }: ExhibitionGridProps) {
+  const t = useTranslations('exhibitions');
+
   if (exhibitions.length === 0) {
     return (
       <div className="text-center py-12 text-gray-500">
-        No exhibitions found
+        {t('noExhibitions')}
       </div>
     );
   }
