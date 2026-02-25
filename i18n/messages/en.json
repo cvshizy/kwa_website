@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "exhibitions": "Exhibitions",
+    "press": "Press",
+    "ourTeam": "Our Team",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "KWM Art Center",
+      "subtitle": "Contemporary Art Space"
+    },
+    "featuredExhibitions": "Featured Exhibitions"
+  },
+  "exhibitions": {
+    "title": "Exhibitions",
+    "upcoming": "Upcoming",
+    "current": "Current",
+    "past": "Past",
+    "viewDetails": "View Details",
+    "relatedExhibitions": "Related Exhibitions"
+  },
+  "press": {
+    "title": "Press",
+    "readMore": "Read More"
+  },
+  "team": {
+    "title": "Our Team"
+  },
+  "about": {
+    "title": "About KWM Art Center"
+  },
+  "careers": {
+    "title": "Careers"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Opening Hours",
+    "followUs": "Follow Us",
+    "sendMessage": "Send Message",
+    "name": "Name",
+    "message": "Message",
+    "submit": "Submit"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "openingHours": "Opening Hours",
+    "mondayToFriday": "Mon - Fri",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "tuesdayToSaturday": "Tue - Sat",
+    "sundayMonday": "Sun & Mon",
+    "closed": "Closed"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "date": "Date",
+    "artist": "Artist",
+    "location": "Location"
+  }
+}

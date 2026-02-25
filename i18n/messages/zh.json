@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "首页",
+    "exhibitions": "展览",
+    "press": "媒体",
+    "ourTeam": "团队",
+    "about": "关于",
+    "careers": "职位",
+    "contact": "联系"
+  },
+  "home": {
+    "hero": {
+      "title": "KWM艺术中心",
+      "subtitle": "当代艺术空间"
+    },
+    "featuredExhibitions": "特色展览"
+  },
+  "exhibitions": {
+    "title": "展览",
+    "upcoming": "即将展出",
+    "current": "正在展出",
+    "past": "过去展览",
+    "viewDetails": "查看详情",
+    "relatedExhibitions": "相关展览"
+  },
+  "press": {
+    "title": "媒体",
+    "readMore": "阅读更多"
+  },
+  "team": {
+    "title": "我们的团队"
+  },
+  "about": {
+    "title": "关于KWM艺术中心"
+  },
+  "careers": {
+    "title": "职位招聘"
+  },
+  "contact": {
+    "title": "联系我们",
+    "address": "地址",
+    "phone": "电话",
+    "email": "邮箱",
+    "hours": "开放时间",
+    "followUs": "关注我们",
+    "sendMessage": "发送消息",
+    "name": "姓名",
+    "message": "留言",
+    "submit": "提交"
+  },
+  "footer": {
+    "rights": "版权所有",
+    "openingHours": "开放时间",
+    "mondayToFriday": "周一至周五",
+    "saturday": "周六",
+    "sunday": "周日",
+    "tuesdayToSaturday": "周二至周六",
+    "sundayMonday": "周日及周一",
+    "closed": "闭馆"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "date": "日期",
+    "artist": "艺术家",
+    "location": "地点"
+  }
+}

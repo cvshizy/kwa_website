@@ -1,0 +1,99 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
+import { getExhibitionBySlug, getExhibitions } from '@/lib/data';
+import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
+
+type Props = {
+  params: Promise<{ locale: string; slug: string }>;
+};
+
+export async function generateStaticParams() {
+  const exhibitions = await getExhibitions('en');
+  return exhibitions.map((exhibition) => ({
+    slug: exhibition.slug,
+  }));
+}
+
+export default async function ExhibitionDetailPage({ params }: Props) {
+  const { locale, slug } = await params;
+
+  const exhibition = await getExhibitionBySlug(slug, locale as 'en' | 'zh');
+
+  if (!exhibition) {
+    notFound();
+  }
+
+  const t = await getTranslations('exhibitions');
+  const tCommon = await getTranslations('common');
+  const currentLocale = locale as 'en' | 'zh';
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return currentLocale === 'zh'
+      ? date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
+      : date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  };
+
+  // Get related exhibitions (same status, different slug)
+  const allExhibitions = await getExhibitions(locale as 'en' | 'zh');
+  const relatedExhibitions = allExhibitions
+    .filter(ex => ex.status === exhibition.status && ex.slug !== slug)
+    .slice(0, 3);
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Image */}
+      <div className="relative h-[60vh] md:h-[70vh]">
+        <Image
+          src={exhibition.coverImage}
+          alt={exhibition.title[currentLocale]}
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* Exhibition Info */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="space-y-6">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              {exhibition.title[currentLocale]}
+            </h1>
+            <p className="text-xl text-gray-600 mb-2">{exhibition.artist[currentLocale]}</p>
+            <p className="text-sm text-gray-400">
+              {formatDate(exhibition.startDate)} - {formatDate(exhibition.endDate)}
+            </p>
+          </div>
+
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-700 leading-relaxed">
+              {exhibition.description[currentLocale]}
+            </p>
+          </div>
+
+          <div className="pt-8">
+            <Link
+              href="/exhibitions"
+              className="inline-block text-sm text-gray-600 hover:text-black transition-colors"
+            >
+              ← Back to Exhibitions
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Exhibitions */}
+      {relatedExhibitions.length > 0 && (
+        <div className="bg-gray-50 py-12 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold mb-8">{t('relatedExhibitions')}</h2>
+            <ExhibitionGrid exhibitions={relatedExhibitions} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

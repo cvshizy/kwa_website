@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:kwmartcenter.com)",
+      "Bash(npx create-next-app:*)",
+      "Bash(npx create-next-app@14 temp-next --ts --tailwind --app --no-src --import-alias \"@/*\" --eslint --skip-install)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(./node_modules/.bin/tailwindcss:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "Bash(__NEW_LINE_9a5ee6dd4d668ead__ find app/[locale]/ -name \"*.tsx\" -type f -exec sed -i '' 's/, setRequestLocale//g' {} ;)",
+      "Bash(find:*)"
+    ]
+  }
+}
