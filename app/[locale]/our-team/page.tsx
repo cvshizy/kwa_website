@@ -2,6 +2,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import TeamMemberCard from '@/components/team/TeamMemberCard';
 import { getTeamMembers } from '@/lib/data';
 
+export const revalidate = 60;
 type Props = {
   params: Promise<{ locale: string }>;
 };

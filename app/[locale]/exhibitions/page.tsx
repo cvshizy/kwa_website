@@ -3,6 +3,7 @@ import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
 import ExhibitionFilter from '@/components/exhibitions/ExhibitionFilter';
 import { getExhibitions } from '@/lib/data';
 
+export const revalidate = 60;
 type Props = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ status?: string }>;

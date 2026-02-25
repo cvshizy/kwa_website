@@ -5,6 +5,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getExhibitionBySlug, getExhibitions } from '@/lib/data';
 import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
 
+export const revalidate = 60;
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };

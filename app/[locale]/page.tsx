@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
 import { getFeaturedExhibitions } from '@/lib/data';
 
+export const revalidate = 60; // Re-fetch data every 60 seconds
 type Props = {
   params: Promise<{ locale: string }>;
 };

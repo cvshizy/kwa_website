@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getPressItems, getPressItemBySlug } from '@/lib/data';
 
+export const revalidate = 60;
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };

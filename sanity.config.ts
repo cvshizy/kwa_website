@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'KWM Art Center',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  projectId: 'qiafoam7',
+  dataset: 'production',
 
   basePath: '/studio',
 
