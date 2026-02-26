@@ -12,7 +12,7 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const brandName = locale === 'zh' ? 'KWA金杜艺术中心' : 'K&W ART CENTER';
+  const brandName = 'K&W ART CENTER';
 
   const navigation = [
     { name: t('home'), href: '/' },
