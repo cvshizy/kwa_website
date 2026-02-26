@@ -10,8 +10,8 @@ export default function ContactPage() {
   const [showWechatQR, setShowWechatQR] = useState(false);
 
   const address = locale === 'zh'
-    ? '北京市朝阳区东三环中路1号\n环球金融中心东楼201'
-    : 'Room 201, East Tower\nGlobal Financial Center\nNo. 1 East Third Ring Road\nChaoyang District, Beijing 100020';
+    ? '北京市朝阳区东三环中路1号\r环球金融中心东楼201'
+    : 'Room 201, East Tower\rGlobal Financial Center\rNo. 1 East Third Ring Road\rChaoyang District, Beijing 100020';
 
   return (
     <>
@@ -182,7 +182,7 @@ export default function ContactPage() {
             </div>
             <p className="text-sm text-gray-600 mb-4">
               {locale === 'zh'
-                ? '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA艺术中心'
+                ? '请扫描二维码来关注我们的微信公众号\r或者在微信中搜索我们的公众号名称：KWA金杜艺术中心'
                 : 'Scan the QR code to follow our WeChat account\nor search for: KWA艺术中心'}
             </p>
             <button
