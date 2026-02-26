@@ -83,6 +83,25 @@ export default async function ExhibitionDetailPage({ params }: Props) {
             </div>
           )}
 
+          {/* Exhibition Gallery */}
+          {exhibition.images && exhibition.images.length > 0 && (
+            <div className="pt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {exhibition.images.map((imageUrl: string, index: number) => (
+                  <div key={index} className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                    <Image
+                      src={imageUrl}
+                      alt={`${exhibition.title[currentLocale]} - ${index + 1}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="pt-8">
             <Link
               href="/exhibitions"

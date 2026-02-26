@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { PortableText } from '@portabletext/react';
 import { getPressItems, getPressItemBySlug } from '@/lib/data';
 
 export const revalidate = 60;
@@ -66,10 +67,10 @@ export default async function PressDetailPage({ params }: Props) {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {press.title[currentLocale]}
             </h1>
-            {press.summary[currentLocale] && (
-              <p className="text-xl text-gray-600 leading-relaxed">
-                {press.summary[currentLocale]}
-              </p>
+            {press.summary?.[currentLocale] && (
+              <div className="text-xl text-gray-600 leading-relaxed prose prose-lg max-w-none">
+                <PortableText value={press.summary[currentLocale]} />
+              </div>
             )}
           </div>
 
@@ -99,12 +100,10 @@ export default async function PressDetailPage({ params }: Props) {
             </div>
           )}
 
-          {press.content[currentLocale] && (
+          {press.content?.[currentLocale] && (
             <div className="border-t border-gray-200 pt-8">
-              <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                  {press.content[currentLocale]}
-                </p>
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <PortableText value={press.content[currentLocale]} />
               </div>
             </div>
           )}

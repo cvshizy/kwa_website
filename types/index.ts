@@ -27,8 +27,8 @@ export interface PressItem {
   id: string;
   slug: string;
   title: LocalizedContent;
-  summary: LocalizedContent;
-  content: LocalizedContent;
+  summary: LocalizedPortableText;
+  content: LocalizedPortableText;
   coverImage: string;
   pdfUrl: LocalizedContent;
   publishDate: string;
