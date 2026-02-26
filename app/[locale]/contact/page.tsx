@@ -1,131 +1,199 @@
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+'use client';
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
+import { useState } from 'react';
+import Image from 'next/image';
+import { useTranslations, useLocale } from 'next-intl';
 
-export default async function ContactPage({ params }: Props) {
-  const { locale } = await params;
-  unstable_setRequestLocale(locale);
-
-  const t = await getTranslations('contact');
-  const tFooter = await getTranslations('footer');
+export default function ContactPage() {
+  const locale = useLocale();
+  const t = useTranslations('contact');
+  const [showWechatQR, setShowWechatQR] = useState(false);
 
   const address = locale === 'zh'
     ? '北京市朝阳区东三环中路1号\n环球金融中心东楼201'
     : 'Room 201, East Tower\nGlobal Financial Center\nNo. 1 East Third Ring Road\nChaoyang District, Beijing 100020';
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      <h1 className="text-4xl md:text-5xl font-bold mb-12">{t('title')}</h1>
+    <>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-12">{t('title')}</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-        {/* Contact Information */}
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-3">{t('address')}</h3>
-            <p className="text-gray-700 whitespace-pre-line">{address}</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-3">{t('address')}</h3>
+              <p className="text-gray-700 whitespace-pre-line">{address}</p>
+            </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-3">{t('phone')}</h3>
-            <p className="text-gray-700">+86 10 56612254</p>
-          </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3">{t('phone')}</h3>
+              <p className="text-gray-700">+86 10 56612254</p>
+            </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-3">{t('email')}</h3>
-            <p className="text-gray-700">info@kwmartcenter.com</p>
-          </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3">{t('email')}</h3>
+              <p className="text-gray-700">info@kwmartcenter.com</p>
+            </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-3">{t('hours')}</h3>
-            <div className="text-gray-700 space-y-1">
-              {locale === 'zh' ? (
-                <>
-                  <p>周二至周六: 10:00 - 19:00</p>
-                  <p>周日及周一: 闭馆</p>
-                </>
-              ) : (
-                <>
-                  <p>Tuesday - Saturday: 10:00 - 19:00</p>
-                  <p>Sunday & Monday: Closed</p>
-                </>
-              )}
+            <div>
+              <h3 className="text-xl font-semibold mb-3">{t('hours')}</h3>
+              <div className="text-gray-700 space-y-1">
+                {locale === 'zh' ? (
+                  <>
+                    <p>周二至周六: 10:00 - 19:00</p>
+                    <p>周日及周一: 闭馆</p>
+                  </>
+                ) : (
+                  <>
+                    <p>Tuesday - Saturday: 10:00 - 19:00</p>
+                    <p>Sunday & Monday: Closed</p>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-4">{t('followUs')}</h3>
+              <div className="flex space-x-4">
+                {/* 小红书 */}
+                <a
+                  href="https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  aria-label="小红书"
+                  title="小红书"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c.55 0 1 .45 1 1v4h4c.55 0 1 .45 1 1s-.45 1-1 1h-4v4c0 .55-.45 1-1 1s-1-.45-1-1v-4H7c-.55 0-1-.45-1-1s.45-1 1-1h4V6c0-.55.45-1 1-1z" />
+                  </svg>
+                </a>
+                {/* 抖音 */}
+                <a
+                  href="https://www.douyin.com/user/MS4wLjABAAAAJUfo6FESVKP4HTbA1VIwtxkA-VCoFvTyCWKxDf5M6NuCmJxZuhXMXYU7A8WrLzcg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  aria-label="抖音"
+                  title="抖音"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z" />
+                  </svg>
+                </a>
+                {/* 微博 */}
+                <a
+                  href="https://weibo.com/u/6029611887"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  aria-label="微博"
+                  title="微博"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.6-2.759 5.049-6.739 5.443zM9.05 17.219c-.384.616-1.208.884-1.829.602-.612-.279-.793-.99-.406-1.593.379-.595 1.176-.86 1.793-.595.627.272.826.99.442 1.586zm1.27-1.627c-.141.237-.449.353-.689.253-.236-.09-.307-.36-.17-.59.141-.229.445-.344.68-.246.241.1.315.36.18.583zm.278-2.835c-1.697-.441-3.613.296-4.359 1.663-.762 1.397-.097 2.954 1.515 3.457 1.667.52 3.691-.236 4.434-1.693.736-1.432.011-2.964-1.59-3.427zM20.06 11.603c-.229-.06-.382-.104-.263-.375.257-.588.283-1.093.007-1.455-.516-.674-1.924-.638-3.544-.018 0 0-.508.221-.378-.18.249-.8.212-1.467-.176-1.854-.879-.88-3.22.031-5.233 2.029-1.5 1.489-2.37 3.071-2.37 4.439 0 2.616 3.354 4.209 6.634 4.209 4.297 0 7.159-2.5 7.159-4.481 0-1.199-1.01-1.879-1.836-2.314zM16.669 3.983c-.654-1.198-2.238-1.755-3.608-1.459.538.228 1.093.611 1.537 1.158.445.547.736 1.176.851 1.795 1.068-.251 1.875-1.494 1.22-1.494zm1.248-1.641C16.899.605 15.024-.046 13.37.456c.768.323 1.561.866 2.195 1.643.635.776 1.053 1.665 1.22 2.539 1.52-.352 2.673-2.116 1.132-2.296z" />
+                  </svg>
+                </a>
+                {/* 微信 */}
+                <button
+                  onClick={() => setShowWechatQR(true)}
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  aria-label="微信"
+                  title="微信"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 6.025-1.98-3.455-2.873-8.202-3.656-11.768-3.656zm-2.488 5.93a1.11 1.11 0 1 1 0-2.222 1.11 1.11 0 0 1 0 2.221zm5.876 0a1.11 1.11 0 1 1 0-2.222 1.11 1.11 0 0 1 0 2.221z" />
+                    <path d="M24 14.755c0-3.254-3.013-5.897-6.732-5.897-3.72 0-6.732 2.643-6.732 5.897 0 3.253 3.012 5.896 6.732 5.896a8.176 8.176 0 0 0 2.295-.32.717.717 0 0 1 .58.08l1.534.894a.264.264 0 0 0 .135.044.236.236 0 0 0 .234-.234c0-.058-.024-.114-.039-.172l-.315-1.19a.477.477 0 0 1 .173-.537A5.028 5.028 0 0 0 24 14.755zm-8.421-1.528a.897.897 0 1 1 0-1.794.897.897 0 0 1 0 1.794zm3.667 0a.897.897 0 1 1 0-1.794.897.897 0 0 1 0 1.794z" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-4">{t('followUs')}</h3>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
-                aria-label="WeChat"
+          {/* Contact Form */}
+          <div className="bg-gray-50 p-8">
+            <h3 className="text-xl font-semibold mb-6">{t('sendMessage')}</h3>
+            <form className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  {t('name')}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  {t('email')}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  {t('message')}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-black text-white px-6 py-3 text-sm hover:bg-gray-800 transition-colors"
               >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 6.025-1.98-3.455-2.873-8.202-3.656-11.768-3.656zm-2.488 5.93a1.11 1.11 0 1 1 0-2.222 1.11 1.11 0 0 1 0 2.221zm5.876 0a1.11 1.11 0 1 1 0-2.222 1.11 1.11 0 0 1 0 2.221z" />
-                  <path d="M24 14.755c0-3.254-3.013-5.897-6.732-5.897-3.72 0-6.732 2.643-6.732 5.897 0 3.253 3.012 5.896 6.732 5.896a8.176 8.176 0 0 0 2.295-.32.717.717 0 0 1 .58.08l1.534.894a.264.264 0 0 0 .135.044.236.236 0 0 0 .234-.234c0-.058-.024-.114-.039-.172l-.315-1.19a.477.477 0 0 1 .173-.537A5.028 5.028 0 0 0 24 14.755zm-8.421-1.528a.897.897 0 1 1 0-1.794.897.897 0 0 1 0 1.794zm3.667 0a.897.897 0 1 1 0-1.794.897.897 0 0 1 0 1.794z" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
-                aria-label="Instagram"
-              >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" />
-                </svg>
-              </a>
-            </div>
+                {t('submit')}
+              </button>
+            </form>
           </div>
-        </div>
-
-        {/* Contact Form */}
-        <div className="bg-gray-50 p-8">
-          <h3 className="text-xl font-semibold mb-6">{t('sendMessage')}</h3>
-          <form className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                {t('name')}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                {t('email')}
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                {t('message')}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-black text-white px-6 py-3 text-sm hover:bg-gray-800 transition-colors"
-            >
-              {t('submit')}
-            </button>
-          </form>
         </div>
       </div>
-    </div>
+
+      {/* WeChat QR Code Modal */}
+      {showWechatQR && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60"
+          onClick={() => setShowWechatQR(false)}
+        >
+          <div
+            className="bg-white rounded-lg p-6 mx-4 max-w-sm text-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-lg font-bold mb-4">
+              {locale === 'zh' ? '关注微信公众号' : 'Follow us on WeChat'}
+            </h3>
+            <div className="relative w-64 h-64 mx-auto mb-4">
+              <Image
+                src="/images/wechat-qr.jpg"
+                alt="WeChat QR Code"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <p className="text-sm text-gray-600 mb-4">
+              {locale === 'zh'
+                ? '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA艺术中心'
+                : 'Scan the QR code to follow our WeChat account\nor search for: KWA艺术中心'}
+            </p>
+            <button
+              onClick={() => setShowWechatQR(false)}
+              className="px-6 py-2 bg-black text-white text-sm hover:bg-gray-800 transition-colors rounded"
+            >
+              {locale === 'zh' ? '关闭' : 'Close'}
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

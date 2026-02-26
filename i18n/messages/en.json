@@ -3,14 +3,13 @@
     "home": "Home",
     "exhibitions": "Exhibitions",
     "press": "Press",
-    "ourTeam": "Our Team",
     "about": "About",
     "careers": "Careers",
     "contact": "Contact"
   },
   "home": {
     "hero": {
-      "title": "KWM Art Center",
+      "title": "K&W Art Center",
       "subtitle": "Contemporary Art Space"
     },
     "featuredExhibitions": "Featured Exhibitions",
@@ -31,11 +30,9 @@
     "readMore": "Read More",
     "backToPress": "← Back to Press"
   },
-  "team": {
-    "title": "Our Team"
-  },
   "about": {
-    "title": "About KWM Art Center"
+    "title": "About K&W Art Center",
+    "teamTitle": "Our Team"
   },
   "careers": {
     "title": "Careers"

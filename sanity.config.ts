@@ -5,7 +5,7 @@ import { schemaTypes } from './sanity/schemas';
 
 export default defineConfig({
   name: 'default',
-  title: 'KWM Art Center',
+  title: 'KWA金杜艺术中心',
 
   projectId: 'qiafoam7',
   dataset: 'production',

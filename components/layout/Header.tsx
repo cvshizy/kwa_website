@@ -3,21 +3,22 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const t = useTranslations('nav');
+  const locale = useLocale();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const brandName = locale === 'zh' ? 'KWA金杜艺术中心' : 'K&W ART CENTER';
 
   const navigation = [
     { name: t('home'), href: '/' },
     { name: t('exhibitions'), href: '/exhibitions' },
     { name: t('press'), href: '/press' },
-    { name: t('ourTeam'), href: '/our-team' },
     { name: t('about'), href: '/about' },
-    { name: t('careers'), href: '/careers' },
     { name: t('contact'), href: '/contact' },
   ];
 
@@ -34,7 +35,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold tracking-tight hover:opacity-70 transition-opacity">
-            KWM ART CENTER
+            {brandName}
           </Link>
 
           {/* Desktop Navigation */}
@@ -44,8 +45,8 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm transition-colors ${isActive(item.href)
-                    ? 'text-black font-medium'
-                    : 'text-gray-600 hover:text-black'
+                  ? 'text-black font-medium'
+                  : 'text-gray-600 hover:text-black'
                   }`}
               >
                 {item.name}
@@ -85,8 +86,8 @@ export default function Header() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm transition-colors ${isActive(item.href)
-                      ? 'text-black font-medium'
-                      : 'text-gray-600 hover:text-black'
+                    ? 'text-black font-medium'
+                    : 'text-gray-600 hover:text-black'
                     }`}
                 >
                   {item.name}

@@ -168,12 +168,12 @@ export const mockPress: PressItem[] = [
       zh: '国际艺术家电影系列放映 9'
     },
     summary: {
-      en: 'KWM Art Center continues its acclaimed International Artist Film Series with the ninth installment, featuring works by contemporary video artists.',
-      zh: 'KWM艺术中心继续其备受赞誉的国际艺术家电影系列，第九期展映当代影像艺术家作品。'
+      en: 'K&W Art Center continues its acclaimed International Artist Film Series with the ninth installment, featuring works by contemporary video artists.',
+      zh: 'KWA金杜艺术中心继续其备受赞誉的国际艺术家电影系列，第九期展映当代影像艺术家作品。'
     },
     content: {
-      en: 'The International Artist Film Series has become a signature program at KWM Art Center, providing a platform for experimental and contemporary video art. This ninth screening continues to bridge international art practices with local audiences.',
-      zh: '国际艺术家电影系列已成为KWM艺术中心的标志性项目，为实验性和当代影像艺术提供平台。第九期放映继续连接国际艺术实践与本地观众。'
+      en: 'The International Artist Film Series has become a signature program at K&W Art Center, providing a platform for experimental and contemporary video art. This ninth screening continues to bridge international art practices with local audiences.',
+      zh: '国际艺术家电影系列已成为KWA金杜艺术中心的标志性项目，为实验性和当代影像艺术提供平台。第九期放映继续连接国际艺术实践与本地观众。'
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/01/LAU51595-1024x683.jpg',
     pdfUrl: { en: '', zh: '' },
@@ -225,8 +225,8 @@ export const mockPress: PressItem[] = [
       zh: '月球与刀 — 达里奥·古奇欧'
     },
     summary: {
-      en: 'Italian artist Dario Guccio brings his poetic exploration of dualities to KWM Art Center.',
-      zh: '意大利艺术家达里奥·古奇欧将其对二元性的诗意探索带到KWM艺术中心。'
+      en: 'Italian artist Dario Guccio brings his poetic exploration of dualities to K&W Art Center.',
+      zh: '意大利艺术家达里奥·古奇欧将其对二元性的诗意探索带到KWA金杜艺术中心。'
     },
     content: {
       en: 'Dario Guccio\'s exhibition "Moon and Knife" examines the relationship between opposing forces through contemporary visual language.',
@@ -240,16 +240,16 @@ export const mockPress: PressItem[] = [
     id: '5',
     slug: 'kwm-8th-anniversary-announcement',
     title: {
-      en: 'KWM Art Center Celebrates 8th Anniversary',
-      zh: 'KWM艺术中心庆祝八周年'
+      en: 'K&W Art Center Celebrates 8th Anniversary',
+      zh: 'KWA金杜艺术中心庆祝八周年'
     },
     summary: {
-      en: 'Since opening in 2016, KWM Art Center has become a vital hub for contemporary art in Beijing\'s CBD, presenting over 100 exhibitions.',
-      zh: '自2016年开幕以来，KWM艺术中心已成为北京CBD当代艺术的重要枢纽，呈现了超过100场展览。'
+      en: 'Since opening in 2016, K&W Art Center has become a vital hub for contemporary art in Beijing\'s CBD, presenting over 100 exhibitions.',
+      zh: '自2016年开幕以来，KWA金杜艺术中心已成为北京CBD当代艺术的重要枢纽，呈现了超过100场展览。'
     },
     content: {
-      en: 'KWM Art Center officially opened on October 20, 2016, in the Global Financial Center within Beijing\'s CBD. The institution was founded with support from King & Wood Mallesons law firm, dedicated to presenting professional contemporary art exhibitions and supporting the KWM Foundation\'s collection.',
-      zh: 'KWM艺术中心于2016年10月20日在北京CBD的环球金融中心正式开幕。该机构在金杜律师事务所的支持下成立，致力于呈现专业的当代艺术展览并支持KWM基金会的收藏。'
+      en: 'K&W Art Center officially opened on October 20, 2016, in the Global Financial Center within Beijing\'s CBD. The institution was founded with support from King & Wood Mallesons law firm, dedicated to presenting professional contemporary art exhibitions and supporting the K&W Foundation\'s collection.',
+      zh: 'KWA金杜艺术中心于2016年10月20日在北京CBD的环球金融中心正式开幕。该机构在金杜律师事务所的支持下成立，致力于呈现专业的当代艺术展览并支持KWA金杜基金会的收藏。'
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/01/双语横-金杜艺术中心八周年海报横版-1.jpg',
     pdfUrl: { en: '', zh: '' },
@@ -266,8 +266,8 @@ export const mockTeamMembers: TeamMember[] = [
     titleEN: 'Executive Secretary',
     photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
     bio: {
-      en: 'Michael Yu leads the strategic direction and daily operations of KWM Art Center, ensuring the institution\'s mission to promote contemporary art and cultural exchange.',
-      zh: '俞灵轩领导KWM艺术中心的战略方向和日常运营，确保机构推广当代艺术和文化交流的使命。'
+      en: 'Michael Yu leads the strategic direction and daily operations of K&W Art Center, ensuring the institution\'s mission to promote contemporary art and cultural exchange.',
+      zh: '俞灵轩领导KWA金杜艺术中心的战略方向和日常运营，确保机构推广当代艺术和文化交流的使命。'
     },
     order: 1
   },
@@ -279,8 +279,8 @@ export const mockTeamMembers: TeamMember[] = [
     titleEN: 'Operations Director',
     photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
     bio: {
-      en: 'Han Lin oversees all operational aspects of KWM Art Center, managing facilities, visitor services, and ensuring smooth exhibition execution.',
-      zh: '韩琳负责KWM艺术中心的所有运营工作，管理设施、观众服务，并确保展览顺利执行。'
+      en: 'Han Lin oversees all operational aspects of K&W Art Center, managing facilities, visitor services, and ensuring smooth exhibition execution.',
+      zh: '韩琳负责KWA金杜艺术中心的所有运营工作，管理设施、观众服务，并确保展览顺利执行。'
     },
     order: 2
   },
@@ -292,8 +292,8 @@ export const mockTeamMembers: TeamMember[] = [
     titleEN: 'Marketing Director',
     photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
     bio: {
-      en: 'Sun Ruijiao develops and implements marketing strategies to engage audiences and enhance the visibility of KWM Art Center\'s programs.',
-      zh: '孙瑞娇制定并实施营销策略，以吸引观众并提高KWM艺术中心项目的知名度。'
+      en: 'Sun Ruijiao develops and implements marketing strategies to engage audiences and enhance the visibility of K&W Art Center\'s programs.',
+      zh: '孙瑞娇制定并实施营销策略，以吸引观众并提高KWA金杜艺术中心项目的知名度。'
     },
     order: 3
   },

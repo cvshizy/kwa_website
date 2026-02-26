@@ -21,10 +21,10 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
-  const title = 'KWM Art Center';
+  const title = locale === 'zh' ? 'KWA金杜艺术中心' : 'K&W Art Center';
   const description = locale === 'zh'
-    ? 'KWM艺术中心 - 当代艺术空间'
-    : 'KWM Art Center - Contemporary Art Space';
+    ? 'KWA金杜艺术中心 - 当代艺术空间'
+    : 'K&W Art Center - Contemporary Art Space';
 
   return {
     title: {
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: locale === 'zh'
       ? '艺术中心,当代艺术,展览,艺术家,北京'
       : 'art center, contemporary art, exhibitions, artists, Beijing',
-    authors: [{ name: 'KWM Art Center' }],
+    authors: [{ name: 'K&W Art Center' }],
     openGraph: {
       type: 'website',
       locale: locale === 'zh' ? 'zh_CN' : 'en_US',

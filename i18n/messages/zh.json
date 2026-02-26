@@ -3,14 +3,13 @@
     "home": "首页",
     "exhibitions": "展览",
     "press": "媒体",
-    "ourTeam": "团队",
     "about": "关于",
     "careers": "职位",
     "contact": "联系"
   },
   "home": {
     "hero": {
-      "title": "KWM艺术中心",
+      "title": "KWA金杜艺术中心",
       "subtitle": "当代艺术空间"
     },
     "featuredExhibitions": "特色展览",
@@ -31,11 +30,9 @@
     "readMore": "阅读更多",
     "backToPress": "← 返回媒体列表"
   },
-  "team": {
-    "title": "我们的团队"
-  },
   "about": {
-    "title": "关于KWM艺术中心"
+    "title": "关于KWA金杜艺术中心",
+    "teamTitle": "我们的团队"
   },
   "careers": {
     "title": "职位招聘"
