@@ -163,8 +163,8 @@ export default function Footer() {
             </div>
             <p className="text-sm text-gray-600 mb-4">
               {locale === 'zh'
-                ? '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA艺术中心'
-                : 'Scan the QR code to follow our WeChat account\nor search for: KWA艺术中心'}
+                ? '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA金杜艺术中心'
+                : 'Scan the QR code to follow our WeChat account\nor search for: KWA金杜艺术中心'}
             </p>
             <button
               onClick={() => setShowWechatQR(false)}
