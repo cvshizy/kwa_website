@@ -9,11 +9,17 @@
   },
   "home": {
     "hero": {
-      "title": "K&W Art Center",
-      "subtitle": "Contemporary Art Space"
+      "title": "A quiet force of contemporary art in the center of the city",
+      "subtitle": "K&W Art Center presents exhibitions and public programs with critical depth and contemporary relevance."
     },
+    "primaryCta": "Current Exhibition",
+    "secondaryCta": "View All Exhibitions",
+    "nowShowing": "Now Showing",
     "featuredExhibitions": "Featured Exhibitions",
-    "viewAll": "View All →"
+    "viewAll": "View All →",
+    "aboutTitle": "About K&W Art Center",
+    "aboutBody": "Since 2016, we have advanced contemporary art presentation, research, and public dialogue in Beijing CBD.",
+    "aboutCta": "About Us"
   },
   "exhibitions": {
     "title": "Exhibitions",

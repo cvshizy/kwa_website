@@ -9,11 +9,17 @@
   },
   "home": {
     "hero": {
-      "title": "KWA金杜艺术中心",
-      "subtitle": "当代艺术空间"
+      "title": "在城市中心，观看当代艺术最安静的力量",
+      "subtitle": "KWA金杜艺术中心持续呈现具有思想深度与时代感的展览与公共项目。"
     },
+    "primaryCta": "当前展览",
+    "secondaryCta": "浏览全部展览",
+    "nowShowing": "正在展出",
     "featuredExhibitions": "特色展览",
-    "viewAll": "查看全部 →"
+    "viewAll": "查看全部 →",
+    "aboutTitle": "关于 KWA金杜艺术中心",
+    "aboutBody": "自2016年以来，我们在北京CBD持续推动当代艺术的展示、研究与公共对话。",
+    "aboutCta": "了解我们"
   },
   "exhibitions": {
     "title": "展览",
