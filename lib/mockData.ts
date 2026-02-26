@@ -168,12 +168,12 @@ export const mockPress: PressItem[] = [
       zh: '国际艺术家电影系列放映 9'
     },
     summary: {
-      en: 'K&W Art Center continues its acclaimed International Artist Film Series with the ninth installment, featuring works by contemporary video artists.',
-      zh: 'KWA金杜艺术中心继续其备受赞誉的国际艺术家电影系列，第九期展映当代影像艺术家作品。'
+      en: [{"_type":"block","_key":"knzm7dc93","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sh2xewsy7","text":"K&W Art Center continues its acclaimed International Artist Film Series with the ninth installment, featuring works by contemporary video artists.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kdiccn451","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"syutje5ph","text":"KWA金杜艺术中心继续其备受赞誉的国际艺术家电影系列，第九期展映当代影像艺术家作品。","marks":[]}]}]
     },
     content: {
-      en: 'The International Artist Film Series has become a signature program at K&W Art Center, providing a platform for experimental and contemporary video art. This ninth screening continues to bridge international art practices with local audiences.',
-      zh: '国际艺术家电影系列已成为KWA金杜艺术中心的标志性项目，为实验性和当代影像艺术提供平台。第九期放映继续连接国际艺术实践与本地观众。'
+      en: [{"_type":"block","_key":"ka22t4udm","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s0rriypg1","text":"The International Artist Film Series has become a signature program at K&W Art Center, providing a platform for experimental and contemporary video art. This ninth screening continues to bridge international art practices with local audiences.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kfpay5mug","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"swcir4fuf","text":"国际艺术家电影系列已成为KWA金杜艺术中心的标志性项目，为实验性和当代影像艺术提供平台。第九期放映继续连接国际艺术实践与本地观众。","marks":[]}]}]
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/01/LAU51595-1024x683.jpg',
     pdfUrl: { en: '', zh: '' },
@@ -187,12 +187,12 @@ export const mockPress: PressItem[] = [
       zh: '张弓：启示录'
     },
     summary: {
-      en: 'A solo exhibition by artist Zhang Gong exploring themes of revelation and spiritual inquiry through contemporary artistic practice.',
-      zh: '艺术家张弓的个展，通过当代艺术实践探索启示和精神探询的主题。'
+      en: [{"_type":"block","_key":"kjw4leku3","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s2pwoeaw4","text":"A solo exhibition by artist Zhang Gong exploring themes of revelation and spiritual inquiry through contemporary artistic practice.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kcckesky0","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s46jbb9wh","text":"艺术家张弓的个展，通过当代艺术实践探索启示和精神探询的主题。","marks":[]}]}]
     },
     content: {
-      en: 'Zhang Gong\'s "Revelation" presents a comprehensive look at the artist\'s recent works, examining the intersection of personal spirituality and contemporary visual language.',
-      zh: '张弓的"启示录"全面展示了艺术家的近期作品，审视个人精神性与当代视觉语言的交汇。'
+      en: [{"_type":"block","_key":"k3qzatig6","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sa55hp0l7","text":"Zhang Gong's \"Revelation\" presents a comprehensive look at the artist's recent works, examining the intersection of personal spirituality and contemporary visual language.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kup01x2wy","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sjitwkene","text":"张弓的\"启示录\"全面展示了艺术家的近期作品，审视个人精神性与当代视觉语言的交汇。","marks":[]}]}]
     },
     coverImage: 'https://kwmartcenter.com/wp-content/uploads/2025/05/3现场图-1024x683.jpg',
     pdfUrl: { en: '', zh: '' },
@@ -206,12 +206,12 @@ export const mockPress: PressItem[] = [
       zh: '也是郭凤怡'
     },
     summary: {
-      en: 'An exhibition celebrating the unique artistic vision of Guo Fengyi, exploring her distinctive approach to art-making.',
-      zh: '展览庆祝郭凤怡独特的艺术视野，探索她独特的艺术创作方式。'
+      en: [{"_type":"block","_key":"kqsnjgbhd","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s6pxlr1gv","text":"An exhibition celebrating the unique artistic vision of Guo Fengyi, exploring her distinctive approach to art-making.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kqz3rxeng","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sygi3k1xi","text":"展览庆祝郭凤怡独特的艺术视野，探索她独特的艺术创作方式。","marks":[]}]}]
     },
     content: {
-      en: 'Guo Fengyi\'s work represents a unique voice in contemporary Chinese art, combining traditional elements with deeply personal expression.',
-      zh: '郭凤怡的作品代表了中国当代艺术中的独特声音，将传统元素与深度个人表达相结合。'
+      en: [{"_type":"block","_key":"ksosy01nn","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sad2ucoeq","text":"Guo Fengyi's work represents a unique voice in contemporary Chinese art, combining traditional elements with deeply personal expression.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kt2x76anv","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sphv5pj9h","text":"郭凤怡的作品代表了中国当代艺术中的独特声音，将传统元素与深度个人表达相结合。","marks":[]}]}]
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/03/空镜-喻红作品-1024x683.jpg',
     pdfUrl: { en: '', zh: '' },
@@ -225,12 +225,12 @@ export const mockPress: PressItem[] = [
       zh: '月球与刀 — 达里奥·古奇欧'
     },
     summary: {
-      en: 'Italian artist Dario Guccio brings his poetic exploration of dualities to K&W Art Center.',
-      zh: '意大利艺术家达里奥·古奇欧将其对二元性的诗意探索带到KWA金杜艺术中心。'
+      en: [{"_type":"block","_key":"keph86i2f","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s53bqin6r","text":"Italian artist Dario Guccio brings his poetic exploration of dualities to K&W Art Center.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kxaysosr9","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sr8gpdnog","text":"意大利艺术家达里奥·古奇欧将其对二元性的诗意探索带到KWA金杜艺术中心。","marks":[]}]}]
     },
     content: {
-      en: 'Dario Guccio\'s exhibition "Moon and Knife" examines the relationship between opposing forces through contemporary visual language.',
-      zh: '达里奥·古奇欧的展览"月球与刀"通过当代视觉语言审视对立力量之间的关系。'
+      en: [{"_type":"block","_key":"knlbz9kmg","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s7nloa8em","text":"Dario Guccio's exhibition \"Moon and Knife\" examines the relationship between opposing forces through contemporary visual language.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"k3d2b9nd0","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"shxj9gxqs","text":"达里奥·古奇欧的展览\"月球与刀\"通过当代视觉语言审视对立力量之间的关系。","marks":[]}]}]
     },
     coverImage: 'https://kwmartcenter.com/wp-content/uploads/2025/06/45-Snow-Covered-Pier-Kiyohama-Hokkaido-Japan.-2004.jpg',
     pdfUrl: { en: '', zh: '' },
@@ -244,12 +244,12 @@ export const mockPress: PressItem[] = [
       zh: 'KWA金杜艺术中心庆祝八周年'
     },
     summary: {
-      en: 'Since opening in 2016, K&W Art Center has become a vital hub for contemporary art in Beijing\'s CBD, presenting over 100 exhibitions.',
-      zh: '自2016年开幕以来，KWA金杜艺术中心已成为北京CBD当代艺术的重要枢纽，呈现了超过100场展览。'
+      en: [{"_type":"block","_key":"k2dxa1nvy","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sxtsgwm02","text":"Since opening in 2016, K&W Art Center has become a vital hub for contemporary art in Beijing's CBD, presenting over 100 exhibitions.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kqjdiz054","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sn71tzzd7","text":"自2016年开幕以来，KWA金杜艺术中心已成为北京CBD当代艺术的重要枢纽，呈现了超过100场展览。","marks":[]}]}]
     },
     content: {
-      en: 'K&W Art Center officially opened on October 20, 2016, in the Global Financial Center within Beijing\'s CBD. The institution was founded with support from King & Wood Mallesons law firm, dedicated to presenting professional contemporary art exhibitions and supporting the K&W Foundation\'s collection.',
-      zh: 'KWA金杜艺术中心于2016年10月20日在北京CBD的环球金融中心正式开幕。该机构在金杜律师事务所的支持下成立，致力于呈现专业的当代艺术展览并支持KWA金杜基金会的收藏。'
+      en: [{"_type":"block","_key":"ks4hyc2jm","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"ststuvahy","text":"K&W Art Center officially opened on October 20, 2016, in the Global Financial Center within Beijing's CBD. The institution was founded with support from King & Wood Mallesons law firm, dedicated to presenting professional contemporary art exhibitions and supporting the K&W Foundation's collection.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kcaoqc9o6","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sq0qvim6s","text":"KWA金杜艺术中心于2016年10月20日在北京CBD的环球金融中心正式开幕。该机构在金杜律师事务所的支持下成立，致力于呈现专业的当代艺术展览并支持KWA金杜基金会的收藏。","marks":[]}]}]
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/01/双语横-金杜艺术中心八周年海报横版-1.jpg',
     pdfUrl: { en: '', zh: '' },
