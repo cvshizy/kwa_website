@@ -2,36 +2,36 @@ import { defineType, defineField } from 'sanity';
 
 export default defineType({
   name: 'teamMember',
-  title: 'Team Member',
+  title: '团队成员',
   type: 'document',
   fields: [
     defineField({
       name: 'nameCN',
-      title: 'Name (Chinese)',
+      title: '姓名（中文）',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'nameEN',
-      title: 'Name (English)',
+      title: '姓名（英文）',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'titleCN',
-      title: 'Title (Chinese)',
+      title: '职位（中文）',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'titleEN',
-      title: 'Title (English)',
+      title: '职位（英文）',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'photo',
-      title: 'Photo',
+      title: '照片',
       type: 'image',
       options: {
         hotspot: true,
@@ -40,34 +40,35 @@ export default defineType({
     }),
     defineField({
       name: 'bio_en',
-      title: 'Bio (English)',
+      title: '简介（英文）',
       type: 'text',
       rows: 5,
     }),
     defineField({
       name: 'bio_zh',
-      title: 'Bio (Chinese)',
+      title: '简介（中文）',
       type: 'text',
       rows: 5,
     }),
     defineField({
       name: 'order',
-      title: 'Display Order',
+      title: '显示顺序',
       type: 'number',
+      description: '数字越小越靠前',
       validation: (Rule) => Rule.required().min(0),
       initialValue: 0,
     }),
   ],
   preview: {
     select: {
-      title: 'nameEN',
-      subtitle: 'titleEN',
+      title: 'nameCN',
+      subtitle: 'titleCN',
       media: 'photo',
     },
   },
   orderings: [
     {
-      title: 'Display Order',
+      title: '显示顺序',
       name: 'orderAsc',
       by: [{ field: 'order', direction: 'asc' }],
     },

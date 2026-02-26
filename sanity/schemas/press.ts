@@ -2,24 +2,24 @@ import { defineType, defineField } from 'sanity';
 
 export default defineType({
   name: 'press',
-  title: 'Press',
+  title: '新闻',
   type: 'document',
   fields: [
     defineField({
       name: 'title_en',
-      title: 'Title (English)',
+      title: '标题（英文）',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'title_zh',
-      title: 'Title (Chinese)',
+      title: '标题（中文）',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
-      title: 'Slug',
+      title: '链接标识',
       type: 'slug',
       options: {
         source: 'title_en',
@@ -29,35 +29,35 @@ export default defineType({
     }),
     defineField({
       name: 'summary_en',
-      title: 'Summary (English)',
+      title: '摘要（英文）',
       type: 'text',
       rows: 3,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'summary_zh',
-      title: 'Summary (Chinese)',
+      title: '摘要（中文）',
       type: 'text',
       rows: 3,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'content_en',
-      title: 'Content (English)',
+      title: '正文（英文）',
       type: 'text',
       rows: 10,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'content_zh',
-      title: 'Content (Chinese)',
+      title: '正文（中文）',
       type: 'text',
       rows: 10,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'coverImage',
-      title: 'Cover Image',
+      title: '封面图片',
       type: 'image',
       options: {
         hotspot: true,
@@ -66,14 +66,14 @@ export default defineType({
     }),
     defineField({
       name: 'publishDate',
-      title: 'Publish Date',
+      title: '发布日期',
       type: 'date',
       validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: 'title_en',
+      title: 'title_zh',
       media: 'coverImage',
       date: 'publishDate',
     },

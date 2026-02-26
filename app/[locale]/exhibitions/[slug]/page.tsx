@@ -47,15 +47,21 @@ export default async function ExhibitionDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen">
       {/* Hero Image */}
-      <div className="relative h-[60vh] md:h-[70vh]">
-        <Image
-          src={exhibition.coverImage}
-          alt={exhibition.title[currentLocale]}
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      {exhibition.coverImage ? (
+        <div className="relative h-[60vh] md:h-[70vh]">
+          <Image
+            src={exhibition.coverImage}
+            alt={exhibition.title[currentLocale]}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      ) : (
+        <div className="h-[40vh] md:h-[50vh] bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-400 text-lg">{exhibition.title[currentLocale]}</span>
+        </div>
+      )}
 
       {/* Exhibition Info */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
