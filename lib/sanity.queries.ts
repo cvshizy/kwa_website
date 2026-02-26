@@ -127,6 +127,10 @@ export async function getPressItems(locale: 'en' | 'zh'): Promise<PressItem[]> {
       "zh": content_zh
     },
     "coverImage": coverImage.asset->url,
+    "pdfUrl": {
+      "en": pdfUrl_en,
+      "zh": pdfUrl_zh
+    },
     publishDate
   }`;
 
@@ -158,6 +162,10 @@ export async function getPressItemBySlug(slug: string, locale: 'en' | 'zh'): Pro
       "zh": content_zh
     },
     "coverImage": coverImage.asset->url,
+    "pdfUrl": {
+      "en": pdfUrl_en,
+      "zh": pdfUrl_zh
+    },
     publishDate
   }`;
 

@@ -176,6 +176,7 @@ export const mockPress: PressItem[] = [
       zh: '国际艺术家电影系列已成为KWM艺术中心的标志性项目，为实验性和当代影像艺术提供平台。第九期放映继续连接国际艺术实践与本地观众。'
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/01/LAU51595-1024x683.jpg',
+    pdfUrl: { en: '', zh: '' },
     publishDate: '2020-08-13'
   },
   {
@@ -194,6 +195,7 @@ export const mockPress: PressItem[] = [
       zh: '张弓的"启示录"全面展示了艺术家的近期作品，审视个人精神性与当代视觉语言的交汇。'
     },
     coverImage: 'https://kwmartcenter.com/wp-content/uploads/2025/05/3现场图-1024x683.jpg',
+    pdfUrl: { en: '', zh: '' },
     publishDate: '2020-08-13'
   },
   {
@@ -212,6 +214,7 @@ export const mockPress: PressItem[] = [
       zh: '郭凤怡的作品代表了中国当代艺术中的独特声音，将传统元素与深度个人表达相结合。'
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/03/空镜-喻红作品-1024x683.jpg',
+    pdfUrl: { en: '', zh: '' },
     publishDate: '2020-06-03'
   },
   {
@@ -230,6 +233,7 @@ export const mockPress: PressItem[] = [
       zh: '达里奥·古奇欧的展览"月球与刀"通过当代视觉语言审视对立力量之间的关系。'
     },
     coverImage: 'https://kwmartcenter.com/wp-content/uploads/2025/06/45-Snow-Covered-Pier-Kiyohama-Hokkaido-Japan.-2004.jpg',
+    pdfUrl: { en: '', zh: '' },
     publishDate: '2020-03-18'
   },
   {
@@ -248,6 +252,7 @@ export const mockPress: PressItem[] = [
       zh: 'KWM艺术中心于2016年10月20日在北京CBD的环球金融中心正式开幕。该机构在金杜律师事务所的支持下成立，致力于呈现专业的当代艺术展览并支持KWM基金会的收藏。'
     },
     coverImage: 'http://kwmartcenter.com/wp-content/uploads/2025/01/双语横-金杜艺术中心八周年海报横版-1.jpg',
+    pdfUrl: { en: '', zh: '' },
     publishDate: '2024-10-20'
   }
 ];

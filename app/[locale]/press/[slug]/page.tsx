@@ -36,18 +36,27 @@ export default async function PressDetailPage({ params }: Props) {
       : date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   };
 
+  const pdfUrlZh = press.pdfUrl?.zh || '';
+  const pdfUrlEn = press.pdfUrl?.en || '';
+
   return (
     <div className="min-h-screen">
       {/* Cover Image */}
-      <div className="relative h-[50vh] md:h-[60vh]">
-        <Image
-          src={press.coverImage}
-          alt={press.title[currentLocale]}
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      {press.coverImage ? (
+        <div className="relative h-[50vh] md:h-[60vh]">
+          <Image
+            src={press.coverImage}
+            alt={press.title[currentLocale]}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      ) : (
+        <div className="h-[30vh] bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-400 text-lg">{press.title[currentLocale]}</span>
+        </div>
+      )}
 
       {/* Article Content */}
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -57,18 +66,48 @@ export default async function PressDetailPage({ params }: Props) {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {press.title[currentLocale]}
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {press.summary[currentLocale]}
-            </p>
+            {press.summary[currentLocale] && (
+              <p className="text-xl text-gray-600 leading-relaxed">
+                {press.summary[currentLocale]}
+              </p>
+            )}
           </div>
 
-          <div className="border-t border-gray-200 pt-8">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                {press.content[currentLocale]}
-              </p>
+          {/* PDF 下载链接 */}
+          {(pdfUrlZh || pdfUrlEn) && (
+            <div className="flex flex-wrap gap-4 py-4 border-t border-b border-gray-200">
+              {pdfUrlZh && (
+                <a
+                  href={pdfUrlZh}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-sm hover:bg-gray-800 transition-colors"
+                >
+                  📄 {currentLocale === 'zh' ? '下载中文新闻稿 (PDF)' : 'Chinese Press Release (PDF)'}
+                </a>
+              )}
+              {pdfUrlEn && (
+                <a
+                  href={pdfUrlEn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-black text-black text-sm hover:bg-black hover:text-white transition-colors"
+                >
+                  📄 {currentLocale === 'zh' ? '下载英文新闻稿 (PDF)' : 'English Press Release (PDF)'}
+                </a>
+              )}
             </div>
-          </div>
+          )}
+
+          {press.content[currentLocale] && (
+            <div className="border-t border-gray-200 pt-8">
+              <div className="prose prose-lg max-w-none">
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {press.content[currentLocale]}
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="pt-8">
             <Link

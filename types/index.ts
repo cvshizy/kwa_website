@@ -24,6 +24,7 @@ export interface PressItem {
   summary: LocalizedContent;
   content: LocalizedContent;
   coverImage: string;
+  pdfUrl: LocalizedContent;
   publishDate: string;
 }
 
