@@ -14,8 +14,8 @@ export default function Footer() {
 
   const brandName = locale === 'zh' ? 'KWA金杜艺术中心' : 'K&W ART CENTER';
   const address = locale === 'zh'
-    ? '北京市朝阳区东三环中路1号 环球金融中心东楼201'
-    : 'Room 201, East Tower, Global Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing';
+    ? '北京市朝阳区东三环中路1号\n环球金融中心东楼201'
+    : 'Room 201, East Tower, \nGlobal Financial Center,\nNo.1 East 3rd Ring Middle Road,\nChaoyang District, Beijing';
 
   return (
     <>
