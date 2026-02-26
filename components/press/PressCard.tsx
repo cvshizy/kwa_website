@@ -21,7 +21,7 @@ export default function PressCard({ press }: PressCardProps) {
 
   return (
     <Link href={`/press/${press.slug}`} className="group block">
-      <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 mb-4">
+      <div className="relative aspect-[9/16] overflow-hidden bg-gray-100 mb-4">
         {press.coverImage ? (
           <Image
             src={press.coverImage}

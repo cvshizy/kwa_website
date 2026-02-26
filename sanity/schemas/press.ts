@@ -32,28 +32,24 @@ export default defineType({
       title: '摘要（英文）',
       type: 'text',
       rows: 3,
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'summary_zh',
       title: '摘要（中文）',
       type: 'text',
       rows: 3,
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'content_en',
       title: '正文（英文）',
       type: 'text',
       rows: 10,
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'content_zh',
       title: '正文（中文）',
       type: 'text',
       rows: 10,
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'coverImage',
@@ -62,7 +58,18 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'pdfUrl_zh',
+      title: '新闻稿 PDF（中文）',
+      type: 'url',
+      description: '中文新闻稿 PDF 链接',
+    }),
+    defineField({
+      name: 'pdfUrl_en',
+      title: '新闻稿 PDF（英文）',
+      type: 'url',
+      description: '英文新闻稿 PDF 链接',
     }),
     defineField({
       name: 'publishDate',
