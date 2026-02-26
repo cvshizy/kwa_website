@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
+import XiaohongshuIcon from '@/components/ui/XiaohongshuIcon';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -84,11 +85,11 @@ export default function Footer() {
                   href="https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="transition-opacity hover:opacity-85"
                   aria-label="小红书"
                   title="小红书"
                 >
-                  <span className="text-xs font-bold leading-none" style={{ fontSize: '10px' }}>小红书</span>
+                  <XiaohongshuIcon className="h-5 w-5" />
                   <span className="sr-only">小红书</span>
                 </a>
                 {/* 抖音 */}

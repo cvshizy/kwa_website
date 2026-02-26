@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
+import XiaohongshuIcon from '@/components/ui/XiaohongshuIcon';
 
 export default function ContactPage() {
   const locale = useLocale();
@@ -65,7 +66,7 @@ export default function ContactPage() {
                   aria-label="小红书"
                   title="小红书"
                 >
-                  <span className="text-xs font-bold leading-none" style={{ fontSize: '10px' }}>小红书</span>
+                  <XiaohongshuIcon className="h-5 w-5" />
                 </a>
                 {/* 抖音 */}
                 <a
