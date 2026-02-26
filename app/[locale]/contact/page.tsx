@@ -112,7 +112,13 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="bg-gray-50 p-8">
             <h3 className="text-xl font-semibold mb-6">{t('sendMessage')}</h3>
-            <form className="space-y-4">
+            <form
+              action="https://formspree.io/f/info@kwmartcenter.com"
+              method="POST"
+              className="space-y-4"
+            >
+              <input type="hidden" name="_subject" value="New message from K&W Art Center website" />
+              <input type="text" name="_gotcha" style={{ display: 'none' }} />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   {t('name')}
@@ -121,6 +127,7 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   name="name"
+                  required
                   className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
                 />
               </div>
@@ -132,6 +139,7 @@ export default function ContactPage() {
                   type="email"
                   id="email"
                   name="email"
+                  required
                   className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
                 />
               </div>
@@ -143,6 +151,7 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   rows={5}
+                  required
                   className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
                 />
               </div>
