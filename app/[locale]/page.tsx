@@ -20,6 +20,8 @@ export default async function Home({ params }: Props) {
   );
   const featuredList = sortedExhibitions.slice(0, 6);
   const heroTitle = t('hero.title');
+  const heroSubtitle = t('hero.subtitle');
+  const aboutBody = t('aboutBody');
   const heroTitleParts = locale === 'zh' ? heroTitle.split('，') : [heroTitle];
   const dateFormatter = new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', {
     year: 'numeric',
@@ -41,12 +43,16 @@ export default async function Home({ params }: Props) {
                     <br />
                     {heroTitleParts.slice(1).join('，')}
                   </>
+                ) : locale === 'en' ? (
+                  splitWithLineBreak(heroTitle, 'A quiet force of contemporary art')
                 ) : (
                   heroTitle
                 )}
               </h1>
               <p className="text-base md:text-xl text-black/70 max-w-2xl leading-relaxed">
-                {t('hero.subtitle')}
+                {locale === 'en'
+                  ? splitWithLineBreak(heroSubtitle, 'K&W Art Center presents exhibitions and public programs')
+                  : heroSubtitle}
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
@@ -108,7 +114,12 @@ export default async function Home({ params }: Props) {
         <div className="rounded-[28px] border border-black/5 bg-white/70 backdrop-blur p-8 md:p-12">
           <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4">{t('aboutTitle')}</h2>
           <p className="text-black/70 text-base md:text-lg max-w-3xl leading-relaxed mb-7">
-            {t('aboutBody')}
+            {locale === 'en'
+              ? splitWithLineBreak(
+                aboutBody,
+                'Since 2016, we have advanced contemporary art presentation, research, and public dialogue'
+              )
+              : aboutBody}
           </p>
           <Link
             href="/about"
@@ -119,5 +130,18 @@ export default async function Home({ params }: Props) {
         </div>
       </section>
     </div>
+  );
+}
+
+function splitWithLineBreak(text: string, marker: string) {
+  if (!text.startsWith(marker)) return text;
+
+  const rest = text.slice(marker.length).trimStart();
+  return (
+    <>
+      {marker}
+      <br />
+      {rest}
+    </>
   );
 }
