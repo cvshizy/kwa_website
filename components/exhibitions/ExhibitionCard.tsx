@@ -21,7 +21,7 @@ export default function ExhibitionCard({ exhibition }: ExhibitionCardProps) {
 
   return (
     <Link href={`/exhibitions/${exhibition.slug}`} className="group block">
-      <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-4">
+      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
         {exhibition.coverImage ? (
           <Image
             src={exhibition.coverImage}
