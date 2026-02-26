@@ -42,14 +42,14 @@ export default defineType({
     defineField({
       name: 'description_en',
       title: '描述（英文）',
-      type: 'text',
-      rows: 5,
+      type: 'array',
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'description_zh',
       title: '描述（中文）',
-      type: 'text',
-      rows: 5,
+      type: 'array',
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'startDate',

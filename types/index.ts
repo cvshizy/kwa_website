@@ -3,12 +3,18 @@ export interface LocalizedContent {
   zh: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface LocalizedPortableText {
+  en: any[];
+  zh: any[];
+}
+
 export interface Exhibition {
   id: string;
   slug: string;
   title: LocalizedContent;
   artist: LocalizedContent;
-  description: LocalizedContent;
+  description: LocalizedPortableText;
   startDate: string;
   endDate: string;
   status: 'upcoming' | 'current' | 'past';

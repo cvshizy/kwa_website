@@ -13,8 +13,8 @@ export const mockExhibitions: Exhibition[] = [
       zh: '迈克尔·肯纳'
     },
     description: {
-      en: 'The showcase presents representative works spanning nearly five decades, emphasizing Kenna\'s minimalist approach and meditative interplay of light and shadow. Over 100 silver gelatin prints hand-developed by Kenna feature prominently, representing China\'s largest-scale individual exhibition of his work. The exhibition comprises five thematic sections: The Quiet Form of Nature, The Whisper of Light, The Tree Heard the Wind, What Is Left Unspoken, and The Silence Beneath Snow.',
-      zh: '展览呈现迈克尔·肯纳近五十年的代表作品，强调其极简主义手法和光影的冥想式交织。展出超过100幅由肯纳亲手冲洗的银盐照片，是中国规模最大的肯纳个展。展览包含五个主题部分：自然的寂静形态、光的私语、树听见了风、未尽之言和雪下的寂静。'
+      en: [{"_type":"block","_key":"kwn6b4vfz","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sew4lwlz9","text":"The showcase presents representative works spanning nearly five decades, emphasizing Kenna's minimalist approach and meditative interplay of light and shadow. Over 100 silver gelatin prints hand-developed by Kenna feature prominently, representing China's largest-scale individual exhibition of his work. The exhibition comprises five thematic sections: The Quiet Form of Nature, The Whisper of Light, The Tree Heard the Wind, What Is Left Unspoken, and The Silence Beneath Snow.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kdhmo15rb","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s0g50fkub","text":"展览呈现迈克尔·肯纳近五十年的代表作品，强调其极简主义手法和光影的冥想式交织。展出超过100幅由肯纳亲手冲洗的银盐照片，是中国规模最大的肯纳个展。展览包含五个主题部分：自然的寂静形态、光的私语、树听见了风、未尽之言和雪下的寂静。","marks":[]}]}]
     },
     startDate: '2025-07-11',
     endDate: '2025-08-09',
@@ -41,8 +41,8 @@ export const mockExhibitions: Exhibition[] = [
       zh: '张伟'
     },
     description: {
-      en: 'This inaugural exhibition following artist Zhang Wei\'s passing (1952-2025) presents works spanning five decades. The show emphasizes "freedom and playfulness" as central themes in Wei\'s practice, encompassing landscape sketches from the 1970s "Unnamed Painters Group," abstract works from the 1980s onward, and late-career motorcycle paintings. Wei\'s artistic journey reflects his philosophy of art as "the highest expression of playful spirit."',
-      zh: '这是艺术家张伟（1952-2025）辞世后的首次展览，呈现其五十年间的作品。展览强调"自由与趣味"作为张伟创作的核心主题，涵盖1970年代"无名画会"时期的风景写生、1980年代以来的抽象作品，以及晚期的摩托车绘画。张伟的艺术历程反映了他"艺术是游戏精神的最高表达"的哲学。'
+      en: [{"_type":"block","_key":"ky1n0ada9","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s13vp3512","text":"This inaugural exhibition following artist Zhang Wei's passing (1952-2025) presents works spanning five decades. The show emphasizes \"freedom and playfulness\" as central themes in Wei's practice, encompassing landscape sketches from the 1970s \"Unnamed Painters Group,\" abstract works from the 1980s onward, and late-career motorcycle paintings. Wei's artistic journey reflects his philosophy of art as \"the highest expression of playful spirit.\"","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kj95iwe68","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"soteccsm3","text":"这是艺术家张伟（1952-2025）辞世后的首次展览，呈现其五十年间的作品。展览强调\"自由与趣味\"作为张伟创作的核心主题，涵盖1970年代\"无名画会\"时期的风景写生、1980年代以来的抽象作品，以及晚期的摩托车绘画。张伟的艺术历程反映了他\"艺术是游戏精神的最高表达\"的哲学。","marks":[]}]}]
     },
     startDate: '2025-05-21',
     endDate: '2025-07-05',
@@ -69,8 +69,8 @@ export const mockExhibitions: Exhibition[] = [
       zh: '群展：向京、喻红、潘然、孙蛮、童文敏、王钰清、苏亚碧'
     },
     description: {
-      en: 'The exhibition explores poetic expressions in women\'s art that emerge from everyday life yet transcend the mundane. Curated by Liao Wen, it draws inspiration from the Diamond Sutra concept "Dwelling in Nonattachment, Let the Mind Arise," examining how artists perceive relationships between self, reality, and nature through the most delicate and intuitive sensibilities of women.',
-      zh: '展览探索女性艺术中源于日常生活却超越平凡的诗意表达。由廖雯策展，灵感来自金刚经中"应无所住而生其心"的概念，审视艺术家如何通过女性最细腻和直觉的感知，洞察自我、现实与自然之间的关系。'
+      en: [{"_type":"block","_key":"ks8g45oz0","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sz3achfau","text":"The exhibition explores poetic expressions in women's art that emerge from everyday life yet transcend the mundane. Curated by Liao Wen, it draws inspiration from the Diamond Sutra concept \"Dwelling in Nonattachment, Let the Mind Arise,\" examining how artists perceive relationships between self, reality, and nature through the most delicate and intuitive sensibilities of women.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"k7dwmabxx","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s5q5tqcr9","text":"展览探索女性艺术中源于日常生活却超越平凡的诗意表达。由廖雯策展，灵感来自金刚经中\"应无所住而生其心\"的概念，审视艺术家如何通过女性最细腻和直觉的感知，洞察自我、现实与自然之间的关系。","marks":[]}]}]
     },
     startDate: '2025-02-28',
     endDate: '2025-04-26',
@@ -97,8 +97,8 @@ export const mockExhibitions: Exhibition[] = [
       zh: '群展'
     },
     description: {
-      en: 'The exhibition celebrates the art center\'s eighth anniversary by showcasing diverse artistic perspectives. These works reflect artists\' inquiries into society, history, and existence while narrating the institution\'s mission to foster contemplation and transformative experiences. The exhibition emphasizes that art provides essential balance and spiritual nourishment within Beijing\'s bustling CBD environment.',
-      zh: '展览庆祝艺术中心八周年，展示多元化的艺术视角。这些作品反映了艺术家对社会、历史和存在的探询，同时诠释了机构培养思考和转化体验的使命。展览强调艺术在北京繁华CBD环境中提供了必不可少的平衡和精神滋养。'
+      en: [{"_type":"block","_key":"kzbqsiwln","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"saqpme4mc","text":"The exhibition celebrates the art center's eighth anniversary by showcasing diverse artistic perspectives. These works reflect artists' inquiries into society, history, and existence while narrating the institution's mission to foster contemplation and transformative experiences. The exhibition emphasizes that art provides essential balance and spiritual nourishment within Beijing's bustling CBD environment.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kgq4c35wm","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sconarplz","text":"展览庆祝艺术中心八周年，展示多元化的艺术视角。这些作品反映了艺术家对社会、历史和存在的探询，同时诠释了机构培养思考和转化体验的使命。展览强调艺术在北京繁华CBD环境中提供了必不可少的平衡和精神滋养。","marks":[]}]}]
     },
     startDate: '2024-12-06',
     endDate: '2025-02-15',
@@ -125,8 +125,8 @@ export const mockExhibitions: Exhibition[] = [
       zh: '群展'
     },
     description: {
-      en: 'An exploration of contemporary artistic voices, examining the dialogue between collective expression and individual introspection in modern art practice.',
-      zh: '探索当代艺术声音，审视现代艺术实践中集体表达与个人内省之间的对话。'
+      en: [{"_type":"block","_key":"k4cdy8gz9","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s7nyb9a6c","text":"An exploration of contemporary artistic voices, examining the dialogue between collective expression and individual introspection in modern art practice.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kwobbswc9","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"s70a95pn9","text":"探索当代艺术声音，审视现代艺术实践中集体表达与个人内省之间的对话。","marks":[]}]}]
     },
     startDate: '2024-10-15',
     endDate: '2024-12-30',
@@ -147,8 +147,8 @@ export const mockExhibitions: Exhibition[] = [
       zh: '多位艺术家'
     },
     description: {
-      en: 'An upcoming exhibition featuring emerging and established contemporary artists exploring new directions in Chinese contemporary art.',
-      zh: '即将举办的展览，汇集新兴和知名当代艺术家，探索中国当代艺术的新方向。'
+      en: [{"_type":"block","_key":"kemanumqz","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"syhnyazhn","text":"An upcoming exhibition featuring emerging and established contemporary artists exploring new directions in Chinese contemporary art.","marks":[]}]}],
+      zh: [{"_type":"block","_key":"kvh48yyr8","style":"normal","markDefs":[],"children":[{"_type":"span","_key":"sjdl0lsyc","text":"即将举办的展览，汇集新兴和知名当代艺术家，探索中国当代艺术的新方向。","marks":[]}]}]
     },
     startDate: '2026-03-15',
     endDate: '2026-06-30',
