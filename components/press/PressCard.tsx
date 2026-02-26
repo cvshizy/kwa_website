@@ -22,13 +22,19 @@ export default function PressCard({ press }: PressCardProps) {
   return (
     <Link href={`/press/${press.slug}`} className="group block">
       <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 mb-4">
-        <Image
-          src={press.coverImage}
-          alt={press.title[locale]}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        {press.coverImage ? (
+          <Image
+            src={press.coverImage}
+            alt={press.title[locale]}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+            <span className="text-gray-400 text-sm">{press.title[locale]}</span>
+          </div>
+        )}
       </div>
       <div className="space-y-2">
         <p className="text-xs text-gray-400">{formatDate(press.publishDate)}</p>
