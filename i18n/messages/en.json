@@ -23,6 +23,7 @@
   },
   "exhibitions": {
     "title": "Exhibitions",
+    "all": "All",
     "upcoming": "Upcoming",
     "current": "Current",
     "past": "Past",

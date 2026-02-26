@@ -56,7 +56,7 @@ export default async function Home({ params }: Props) {
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="/exhibitions"
+                  href="/exhibitions?status=current"
                   className="inline-flex items-center justify-center rounded-full bg-black text-white text-sm px-6 py-3 transition-colors hover:bg-black/85"
                 >
                   {t('primaryCta')}

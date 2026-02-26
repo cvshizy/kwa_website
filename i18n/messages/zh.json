@@ -23,6 +23,7 @@
   },
   "exhibitions": {
     "title": "展览",
+    "all": "全部",
     "upcoming": "即将展出",
     "current": "正在展出",
     "past": "过去展览",

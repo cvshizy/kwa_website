@@ -14,7 +14,7 @@ export default function ExhibitionFilter({ selectedStatus }: ExhibitionFilterPro
   const searchParams = useSearchParams();
 
   const filters = [
-    { value: 'all' as const, label: 'All' },
+    { value: 'all' as const, label: t('all') },
     { value: 'current' as const, label: t('current') },
     { value: 'upcoming' as const, label: t('upcoming') },
     { value: 'past' as const, label: t('past') },
