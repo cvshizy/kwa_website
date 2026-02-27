@@ -49,6 +49,19 @@ export interface AboutPageContent {
   content: LocalizedPortableText;
 }
 
+export interface ContactPageContent {
+  address: LocalizedContent;
+  hours: LocalizedContent;
+  wechatDescription: LocalizedContent;
+  phone: string;
+  email: string;
+  socialUrls: {
+    xiaohongshu: string;
+    douyin: string;
+    weibo: string;
+  };
+}
+
 export interface PageContent {
   id: string;
   slug: string;

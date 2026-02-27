@@ -2,8 +2,8 @@
  * Data fetching layer that uses Sanity if configured, otherwise falls back to mock data
  */
 
-import { Exhibition, LocalizedPortableText, PressItem, TeamMember } from '@/types';
-import { mockAboutContent, mockExhibitions, mockPress, mockTeamMembers } from './mockData';
+import { ContactPageContent, Exhibition, LocalizedPortableText, PressItem, TeamMember } from '@/types';
+import { mockAboutContent, mockContactContent, mockExhibitions, mockPress, mockTeamMembers } from './mockData';
 import * as sanity from './sanity.queries';
 
 // Check if Sanity is configured
@@ -94,4 +94,13 @@ function textToPortableText(text: string): LocalizedPortableText['en'] {
     }));
 
   return blocks;
+}
+
+// Contact page
+export async function getContactContent(): Promise<ContactPageContent> {
+  if (isSanityConfigured) {
+    const data = await sanity.getContactContent();
+    if (data) return data;
+  }
+  return mockContactContent;
 }

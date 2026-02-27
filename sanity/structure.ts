@@ -13,5 +13,15 @@ export const structure: StructureResolver = (S) =>
             .schemaType('aboutPage')
             .documentId('aboutPage')
         ),
-      ...S.documentTypeListItems().filter((item) => item.getId() !== 'aboutPage'),
+      S.listItem()
+        .id('contactPage')
+        .title('联系页面')
+        .child(
+          S.document()
+            .schemaType('contactPage')
+            .documentId('contactPage')
+        ),
+      ...S
+        .documentTypeListItems()
+        .filter((item) => !['aboutPage', 'contactPage'].includes(item.getId() || '')),
     ])

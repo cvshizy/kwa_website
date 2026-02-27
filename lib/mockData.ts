@@ -1,4 +1,4 @@
-import { Exhibition, PressItem, TeamMember, LocalizedContent } from '@/types';
+import { ContactPageContent, Exhibition, PressItem, TeamMember, LocalizedContent } from '@/types';
 
 export const mockExhibitions: Exhibition[] = [
   {
@@ -331,4 +331,26 @@ As a strong communicator of Chinese contemporary culture internationally, K&W Ar
 Address: Room 201, East Tower, Global Financial Center, No. 1 East Third Ring Road, Chaoyang District, Beijing 100020
 Hours: Tuesday-Saturday 10:00-19:00; Closed Sunday-Monday
 Contact: +86 10 56612254 | info@kwmartcenter.com`
+};
+
+export const mockContactContent: ContactPageContent = {
+  address: {
+    zh: '北京市朝阳区东三环中路1号\n环球金融中心东楼201',
+    en: 'Room 201, East Tower,\nGlobal Financial Center,\nNo. 1 East Third Ring Road,\nChaoyang District, Beijing 100020',
+  },
+  hours: {
+    zh: '周二至周六: 10:00 - 19:00\n周日及周一: 闭馆',
+    en: 'Tuesday - Saturday: 10:00 - 19:00\nSunday & Monday: Closed',
+  },
+  wechatDescription: {
+    zh: '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA金杜艺术中心',
+    en: 'Scan the QR code to follow our WeChat account\nor search for: KWA艺术中心',
+  },
+  phone: '+86 10 56612254',
+  email: 'info@kwmartcenter.com',
+  socialUrls: {
+    xiaohongshu: 'https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85',
+    douyin: 'https://www.douyin.com/user/MS4wLjABAAAAJUfo6FESVKP4HTbA1VIwtxkA-VCoFvTyCWKxDf5M6NuCmJxZuhXMXYU7A8WrLzcg',
+    weibo: 'https://weibo.com/u/6029611887',
+  },
 };

@@ -1,5 +1,5 @@
 import { client } from './sanity.client';
-import { AboutPageContent, Exhibition, PressItem, TeamMember } from '@/types';
+import { AboutPageContent, ContactPageContent, Exhibition, PressItem, TeamMember } from '@/types';
 
 // Exhibition Queries
 export async function getExhibitions(locale: 'en' | 'zh'): Promise<Exhibition[]> {
@@ -221,6 +221,41 @@ export async function getAboutContent(locale: 'en' | 'zh'): Promise<AboutPageCon
     return about;
   } catch (error) {
     console.error('Error fetching about page:', error);
+    return null;
+  }
+}
+
+// Contact Page Query
+export async function getContactContent(): Promise<ContactPageContent | null> {
+  if (!client) return null;
+  const query = `*[_type == "contactPage"][0]{
+    "address": {
+      "en": address_en,
+      "zh": address_zh
+    },
+    "hours": {
+      "en": hours_en,
+      "zh": hours_zh
+    },
+    "wechatDescription": {
+      "en": wechatDescription_en,
+      "zh": wechatDescription_zh
+    },
+    phone,
+    email,
+    "socialUrls": {
+      "xiaohongshu": xiaohongshuUrl,
+      "douyin": douyinUrl,
+      "weibo": weiboUrl
+    }
+  }`;
+
+  try {
+    const contact = await client.fetch(query);
+    if (!contact?.address?.en || !contact?.address?.zh) return null;
+    return contact;
+  } catch (error) {
+    console.error('Error fetching contact page:', error);
     return null;
   }
 }
