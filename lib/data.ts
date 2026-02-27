@@ -2,7 +2,7 @@
  * Data fetching layer that uses Sanity if configured, otherwise falls back to mock data
  */
 
-import { Exhibition, PressItem, TeamMember } from '@/types';
+import { Exhibition, LocalizedPortableText, PressItem, TeamMember } from '@/types';
 import { mockAboutContent, mockExhibitions, mockPress, mockTeamMembers } from './mockData';
 import * as sanity from './sanity.queries';
 
@@ -64,17 +64,16 @@ export async function getTeamMembers(locale: 'en' | 'zh'): Promise<TeamMember[]>
 }
 
 // About page
-export async function getAboutContent(locale: 'en' | 'zh'): Promise<unknown[]> {
+export async function getAboutContent(locale: 'en' | 'zh'): Promise<LocalizedPortableText['en']> {
   if (isSanityConfigured) {
     const data = await sanity.getAboutContent(locale);
     const cmsContent = data?.content?.[locale];
     if (Array.isArray(cmsContent) && cmsContent.length > 0) return cmsContent;
-    if (typeof cmsContent === 'string' && cmsContent.trim()) return textToPortableText(cmsContent);
   }
   return textToPortableText(mockAboutContent[locale]);
 }
 
-function textToPortableText(text: string): unknown[] {
+function textToPortableText(text: string): LocalizedPortableText['en'] {
   const blocks = text
     .split(/\n{2,}/)
     .map((paragraph) => paragraph.trim())
