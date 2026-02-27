@@ -1,5 +1,5 @@
 import { client } from './sanity.client';
-import { Exhibition, PressItem, TeamMember } from '@/types';
+import { AboutPageContent, Exhibition, PressItem, TeamMember } from '@/types';
 
 // Exhibition Queries
 export async function getExhibitions(locale: 'en' | 'zh'): Promise<Exhibition[]> {
@@ -205,3 +205,22 @@ export async function getTeamMembers(locale: 'en' | 'zh'): Promise<TeamMember[]>
   }
 }
 
+// About Page Query
+export async function getAboutContent(locale: 'en' | 'zh'): Promise<AboutPageContent | null> {
+  if (!client) return null;
+  const query = `*[_type == "aboutPage"][0] {
+    "content": {
+      "en": content_en,
+      "zh": content_zh
+    }
+  }`;
+
+  try {
+    const about = await client.fetch(query);
+    if (!about?.content?.[locale]) return null;
+    return about;
+  } catch (error) {
+    console.error('Error fetching about page:', error);
+    return null;
+  }
+}

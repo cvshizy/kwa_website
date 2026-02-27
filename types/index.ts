@@ -45,6 +45,10 @@ export interface TeamMember {
   order: number;
 }
 
+export interface AboutPageContent {
+  content: LocalizedPortableText;
+}
+
 export interface PageContent {
   id: string;
   slug: string;

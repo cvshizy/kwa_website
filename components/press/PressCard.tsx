@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { PressItem } from '@/types';
 
@@ -21,13 +22,8 @@ export default function PressCard({ press }: PressCardProps) {
   // PDF 链接（优先当前语言）
   const pdfUrl = press.pdfUrl?.[locale] || press.pdfUrl?.zh || press.pdfUrl?.en || '';
 
-  return (
-    <a
-      href={pdfUrl || `/press/${press.slug}`}
-      target={pdfUrl ? '_blank' : undefined}
-      rel={pdfUrl ? 'noopener noreferrer' : undefined}
-      className="group block"
-    >
+  const cardContent = (
+    <>
       <div className="relative aspect-[2/3] overflow-hidden bg-gray-100 mb-4">
         {press.coverImage ? (
           <Image
@@ -55,6 +51,25 @@ export default function PressCard({ press }: PressCardProps) {
           {press.title[locale]}
         </h3>
       </div>
+    </>
+  );
+
+  if (!pdfUrl) {
+    return (
+      <Link href={`/press/${press.slug}`} className="group block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={pdfUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block"
+    >
+      {cardContent}
     </a>
   );
 }

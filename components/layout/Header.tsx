@@ -62,6 +62,8 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-gray-600 hover:text-black transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation-menu"
             >
               {mobileMenuOpen ? (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -78,7 +80,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4">
+          <div id="mobile-navigation-menu" className="md:hidden pb-4">
             <div className="flex flex-col space-y-3">
               {navigation.map((item) => (
                 <Link

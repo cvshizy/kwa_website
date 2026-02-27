@@ -2,11 +2,31 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getFeaturedExhibitions } from '@/lib/data';
+import type { Metadata } from 'next';
 
 export const revalidate = 60;
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const homePath = `/${locale}`;
+
+  return {
+    alternates: {
+      canonical: homePath,
+      languages: {
+        en: '/en',
+        zh: '/zh',
+        'x-default': '/zh',
+      },
+    },
+    openGraph: {
+      url: `https://kwmartcenter.com${homePath}`,
+    },
+  };
+}
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
@@ -22,7 +42,6 @@ export default async function Home({ params }: Props) {
   const heroTitle = t('hero.title');
   const heroSubtitle = t('hero.subtitle');
   const aboutBody = t('aboutBody');
-  const heroTitleParts = locale === 'zh' ? heroTitle.split('，') : [heroTitle];
   const dateFormatter = new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', {
     year: 'numeric',
     month: 'long',
@@ -37,22 +56,10 @@ export default async function Home({ params }: Props) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-4xl space-y-8">
               <h1 className="text-[2rem] leading-tight md:text-6xl md:leading-[1.06] font-semibold tracking-tight max-w-4xl">
-                {locale === 'zh' && heroTitleParts.length > 1 ? (
-                  <>
-                    {heroTitleParts[0]}，
-                    <br />
-                    {heroTitleParts.slice(1).join('，')}
-                  </>
-                ) : locale === 'en' ? (
-                  splitWithLineBreak(heroTitle, 'A quiet force of contemporary art')
-                ) : (
-                  heroTitle
-                )}
+                {renderMultilineText(heroTitle)}
               </h1>
               <p className="text-base md:text-xl text-black/70 max-w-2xl leading-relaxed">
-                {locale === 'en'
-                  ? splitWithLineBreak(heroSubtitle, 'K&W Art Center presents exhibitions and public programs')
-                  : heroSubtitle}
+                {renderMultilineText(heroSubtitle)}
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
@@ -114,12 +121,7 @@ export default async function Home({ params }: Props) {
         <div className="rounded-[28px] border border-black/5 bg-white/70 backdrop-blur p-8 md:p-12">
           <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4">{t('aboutTitle')}</h2>
           <p className="text-black/70 text-base md:text-lg max-w-3xl leading-relaxed mb-7">
-            {locale === 'en'
-              ? splitWithLineBreak(
-                aboutBody,
-                'Since 2016, we have advanced contemporary art presentation, research, and public dialogue'
-              )
-              : aboutBody}
+            {renderMultilineText(aboutBody)}
           </p>
           <Link
             href="/about"
@@ -133,15 +135,11 @@ export default async function Home({ params }: Props) {
   );
 }
 
-function splitWithLineBreak(text: string, marker: string) {
-  if (!text.startsWith(marker)) return text;
-
-  const rest = text.slice(marker.length).trimStart();
-  return (
-    <>
-      {marker}
-      <br />
-      {rest}
-    </>
-  );
+function renderMultilineText(text: string) {
+  return text.split('\n').map((part, index) => (
+    <span key={`${part}-${index}`}>
+      {index > 0 && <br />}
+      {part}
+    </span>
+  ));
 }

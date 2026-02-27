@@ -3,7 +3,7 @@
  */
 
 import { Exhibition, PressItem, TeamMember } from '@/types';
-import { mockExhibitions, mockPress, mockTeamMembers } from './mockData';
+import { mockAboutContent, mockExhibitions, mockPress, mockTeamMembers } from './mockData';
 import * as sanity from './sanity.queries';
 
 // Check if Sanity is configured
@@ -61,4 +61,38 @@ export async function getTeamMembers(locale: 'en' | 'zh'): Promise<TeamMember[]>
     if (data.length > 0) return data;
   }
   return mockTeamMembers;
+}
+
+// About page
+export async function getAboutContent(locale: 'en' | 'zh'): Promise<unknown[]> {
+  if (isSanityConfigured) {
+    const data = await sanity.getAboutContent(locale);
+    const cmsContent = data?.content?.[locale];
+    if (Array.isArray(cmsContent) && cmsContent.length > 0) return cmsContent;
+    if (typeof cmsContent === 'string' && cmsContent.trim()) return textToPortableText(cmsContent);
+  }
+  return textToPortableText(mockAboutContent[locale]);
+}
+
+function textToPortableText(text: string): unknown[] {
+  const blocks = text
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph, index) => ({
+      _type: 'block',
+      _key: `about-fallback-${index}`,
+      style: 'normal',
+      markDefs: [],
+      children: [
+        {
+          _type: 'span',
+          _key: `about-fallback-span-${index}`,
+          text: paragraph.replace(/\n/g, ' '),
+          marks: [],
+        },
+      ],
+    }));
+
+  return blocks;
 }

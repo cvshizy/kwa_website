@@ -1,9 +1,13 @@
 import { MetadataRoute } from 'next';
-import { mockExhibitions, mockPress } from '@/lib/mockData';
+import { getExhibitions, getPressItems } from '@/lib/data';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://kwmartcenter.com';
   const locales = ['en', 'zh'];
+  const [exhibitions, pressItems] = await Promise.all([
+    getExhibitions('zh'),
+    getPressItems('zh'),
+  ]);
 
   // Static pages
   const staticPages = ['', '/exhibitions', '/press', '/our-team', '/about', '/careers', '/contact'];
@@ -17,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // Exhibition pages
-  const exhibitionUrls = mockExhibitions.flatMap(exhibition =>
+  const exhibitionUrls = exhibitions.flatMap(exhibition =>
     locales.map(locale => ({
       url: `${baseUrl}/${locale}/exhibitions/${exhibition.slug}`,
       lastModified: new Date(),
@@ -27,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // Press pages
-  const pressUrls = mockPress.flatMap(press =>
+  const pressUrls = pressItems.flatMap(press =>
     locales.map(locale => ({
       url: `${baseUrl}/${locale}/press/${press.slug}`,
       lastModified: new Date(),

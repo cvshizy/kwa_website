@@ -107,7 +107,7 @@ export default function ContactPage() {
           <div className="bg-gray-50 p-8">
             <h3 className="text-xl font-semibold mb-6">{t('sendMessage')}</h3>
             <form
-              action="https://formspree.io/f/info@kwmartcenter.com"
+              action="https://formspree.io/f/xbdabrdw"
               method="POST"
               className="space-y-4"
             >
