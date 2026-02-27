@@ -1,7 +1,7 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getFeaturedExhibitions } from '@/lib/data';
+import { getFeaturedExhibitions, getHomeContent } from '@/lib/data';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -34,14 +34,19 @@ export default async function Home({ params }: Props) {
 
   const t = await getTranslations('home');
 
-  const featuredExhibitions = await getFeaturedExhibitions(locale as 'en' | 'zh');
+  const currentLocale = locale as 'en' | 'zh';
+  const [featuredExhibitions, homeContent] = await Promise.all([
+    getFeaturedExhibitions(currentLocale),
+    getHomeContent(),
+  ]);
   const sortedExhibitions = [...featuredExhibitions].sort(
     (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
   );
   const featuredList = sortedExhibitions.slice(0, 6);
-  const heroTitle = t('hero.title');
-  const heroSubtitle = t('hero.subtitle');
-  const aboutBody = t('aboutBody');
+  const heroTitle = homeContent.heroTitle[currentLocale];
+  const heroSubtitle = homeContent.heroSubtitle[currentLocale];
+  const aboutTitle = homeContent.aboutTitle[currentLocale];
+  const aboutSubtitle = homeContent.aboutSubtitle[currentLocale];
   const dateFormatter = new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', {
     year: 'numeric',
     month: 'long',
@@ -97,7 +102,7 @@ export default async function Home({ params }: Props) {
                 {exhibition.coverImage && (
                   <Image
                     src={exhibition.coverImage}
-                    alt={exhibition.title[locale as 'en' | 'zh']}
+                    alt={exhibition.title[currentLocale]}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -106,7 +111,7 @@ export default async function Home({ params }: Props) {
               </div>
               <div className="pt-4 px-1 pb-1 space-y-2">
                 <h3 className="text-base md:text-lg font-medium leading-snug">
-                  {exhibition.title[locale as 'en' | 'zh']}
+                  {exhibition.title[currentLocale]}
                 </h3>
                 <p className="text-xs md:text-sm text-black/55">
                   {formatDate(exhibition.startDate)} - {formatDate(exhibition.endDate)}
@@ -119,9 +124,9 @@ export default async function Home({ params }: Props) {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-24">
         <div className="rounded-[28px] border border-black/5 bg-white/70 backdrop-blur p-8 md:p-12">
-          <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4">{t('aboutTitle')}</h2>
+          <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4">{aboutTitle}</h2>
           <p className="text-black/70 text-base md:text-lg max-w-3xl leading-relaxed mb-7">
-            {renderMultilineText(aboutBody)}
+            {renderMultilineText(aboutSubtitle)}
           </p>
           <Link
             href="/about"

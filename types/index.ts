@@ -62,6 +62,13 @@ export interface ContactPageContent {
   };
 }
 
+export interface HomePageContent {
+  heroTitle: LocalizedContent;
+  heroSubtitle: LocalizedContent;
+  aboutTitle: LocalizedContent;
+  aboutSubtitle: LocalizedContent;
+}
+
 export interface PageContent {
   id: string;
   slug: string;

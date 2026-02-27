@@ -21,7 +21,15 @@ export const structure: StructureResolver = (S) =>
             .schemaType('contactPage')
             .documentId('contactPage')
         ),
+      S.listItem()
+        .id('homePage')
+        .title('首页内容')
+        .child(
+          S.document()
+            .schemaType('homePage')
+            .documentId('homePage')
+        ),
       ...S
         .documentTypeListItems()
-        .filter((item) => !['aboutPage', 'contactPage'].includes(item.getId() || '')),
+        .filter((item) => !['aboutPage', 'contactPage', 'homePage'].includes(item.getId() || '')),
     ])

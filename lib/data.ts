@@ -2,8 +2,8 @@
  * Data fetching layer that uses Sanity if configured, otherwise falls back to mock data
  */
 
-import { ContactPageContent, Exhibition, LocalizedPortableText, PressItem, TeamMember } from '@/types';
-import { mockAboutContent, mockContactContent, mockExhibitions, mockPress, mockTeamMembers } from './mockData';
+import { ContactPageContent, Exhibition, HomePageContent, LocalizedPortableText, PressItem, TeamMember } from '@/types';
+import { mockAboutContent, mockContactContent, mockExhibitions, mockHomeContent, mockPress, mockTeamMembers } from './mockData';
 import * as sanity from './sanity.queries';
 
 // Check if Sanity is configured
@@ -103,4 +103,13 @@ export async function getContactContent(): Promise<ContactPageContent> {
     if (data) return data;
   }
   return mockContactContent;
+}
+
+// Home page
+export async function getHomeContent(): Promise<HomePageContent> {
+  if (isSanityConfigured) {
+    const data = await sanity.getHomeContent();
+    if (data) return data;
+  }
+  return mockHomeContent;
 }

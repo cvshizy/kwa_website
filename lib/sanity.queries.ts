@@ -1,5 +1,5 @@
 import { client } from './sanity.client';
-import { AboutPageContent, ContactPageContent, Exhibition, PressItem, TeamMember } from '@/types';
+import { AboutPageContent, ContactPageContent, Exhibition, HomePageContent, PressItem, TeamMember } from '@/types';
 
 // Exhibition Queries
 export async function getExhibitions(locale: 'en' | 'zh'): Promise<Exhibition[]> {
@@ -256,6 +256,38 @@ export async function getContactContent(): Promise<ContactPageContent | null> {
     return contact;
   } catch (error) {
     console.error('Error fetching contact page:', error);
+    return null;
+  }
+}
+
+// Home Page Query
+export async function getHomeContent(): Promise<HomePageContent | null> {
+  if (!client) return null;
+  const query = `*[_type == "homePage"][0]{
+    "heroTitle": {
+      "en": heroTitle_en,
+      "zh": heroTitle_zh
+    },
+    "heroSubtitle": {
+      "en": heroSubtitle_en,
+      "zh": heroSubtitle_zh
+    },
+    "aboutTitle": {
+      "en": aboutTitle_en,
+      "zh": aboutTitle_zh
+    },
+    "aboutSubtitle": {
+      "en": aboutSubtitle_en,
+      "zh": aboutSubtitle_zh
+    }
+  }`;
+
+  try {
+    const home = await client.fetch(query);
+    if (!home?.heroTitle?.en || !home?.heroTitle?.zh) return null;
+    return home;
+  } catch (error) {
+    console.error('Error fetching home page:', error);
     return null;
   }
 }

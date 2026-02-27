@@ -1,4 +1,4 @@
-import { ContactPageContent, Exhibition, PressItem, TeamMember, LocalizedContent } from '@/types';
+import { ContactPageContent, Exhibition, HomePageContent, PressItem, TeamMember, LocalizedContent } from '@/types';
 
 export const mockExhibitions: Exhibition[] = [
   {
@@ -352,5 +352,24 @@ export const mockContactContent: ContactPageContent = {
     xiaohongshu: 'https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85',
     douyin: 'https://www.douyin.com/user/MS4wLjABAAAAJUfo6FESVKP4HTbA1VIwtxkA-VCoFvTyCWKxDf5M6NuCmJxZuhXMXYU7A8WrLzcg',
     weibo: 'https://weibo.com/u/6029611887',
+  },
+};
+
+export const mockHomeContent: HomePageContent = {
+  heroTitle: {
+    zh: '在城市中心，观看当代艺术最安静的力量',
+    en: 'A quiet force of contemporary art\nin the center of the city',
+  },
+  heroSubtitle: {
+    zh: 'KWA金杜艺术中心持续呈现具有思想深度与时代感的展览与公共项目。',
+    en: 'K&W Art Center presents exhibitions and public programs\nwith critical depth and contemporary relevance.',
+  },
+  aboutTitle: {
+    zh: '关于 KWA金杜艺术中心',
+    en: 'About K&W Art Center',
+  },
+  aboutSubtitle: {
+    zh: '自2016年以来，我们在北京CBD持续推动当代艺术的展示、研究与公共对话。',
+    en: 'Since 2016, we have advanced contemporary art presentation, research, and public dialogue\nin Beijing CBD.',
   },
 };
