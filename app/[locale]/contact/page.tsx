@@ -3,9 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
-import XiaohongshuIcon from '@/components/ui/XiaohongshuIcon';
-import WeiboIcon from '@/components/ui/WeiboIcon';
-import WeChatIcon from '@/components/ui/WeChatIcon';
+import SocialMaskIcon from '@/components/ui/SocialMaskIcon';
 
 export default function ContactPage() {
   const locale = useLocale();
@@ -64,44 +62,42 @@ export default function ContactPage() {
                   href="https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 text-black flex items-center justify-center transition-colors"
                   aria-label="小红书"
                   title="小红书"
                 >
-                  <XiaohongshuIcon className="h-5 w-5" />
+                  <SocialMaskIcon src="/images/social/xiaohongshu.svg" className="h-5 w-5" />
                 </a>
                 {/* 抖音 */}
                 <a
                   href="https://www.douyin.com/user/MS4wLjABAAAAJUfo6FESVKP4HTbA1VIwtxkA-VCoFvTyCWKxDf5M6NuCmJxZuhXMXYU7A8WrLzcg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 text-black flex items-center justify-center transition-colors"
                   aria-label="抖音"
                   title="抖音"
                 >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z" />
-                  </svg>
+                  <SocialMaskIcon src="/images/social/douyin.svg" className="h-5 w-5" />
                 </a>
                 {/* 微博 */}
                 <a
                   href="https://weibo.com/u/6029611887"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 text-black flex items-center justify-center transition-colors"
                   aria-label="微博"
                   title="微博"
                 >
-                  <WeiboIcon className="h-5 w-5" />
+                  <SocialMaskIcon src="/images/social/weibo.svg" className="h-5 w-5" />
                 </a>
                 {/* 微信 */}
                 <button
                   onClick={() => setShowWechatQR(true)}
-                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-100 hover:bg-gray-200 text-black flex items-center justify-center transition-colors"
                   aria-label="微信"
                   title="微信"
                 >
-                  <WeChatIcon className="h-5 w-5" />
+                  <SocialMaskIcon src="/images/social/weixin.svg" className="h-5 w-5" />
                 </button>
               </div>
             </div>
