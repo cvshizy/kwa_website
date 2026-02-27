@@ -8,7 +8,9 @@ export default defineType({
     defineField({
       name: 'heroTitle_zh',
       title: 'Hero 主标题（中文）',
-      type: 'string',
+      type: 'text',
+      rows: 2,
+      description: '可用换行控制标题分行（回车即换行）',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -16,6 +18,7 @@ export default defineType({
       title: 'Hero 主标题（英文）',
       type: 'text',
       rows: 2,
+      description: '可用换行控制标题分行（回车即换行）',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
