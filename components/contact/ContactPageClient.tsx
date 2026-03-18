@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import SocialMaskIcon from '@/components/ui/SocialMaskIcon';
 import { ContactPageContent } from '@/types';
+import { contactFormAction } from '@/lib/site';
 
 interface ContactPageClientProps {
   locale: 'en' | 'zh';
@@ -92,7 +93,7 @@ export default function ContactPageClient({ locale, content }: ContactPageClient
           <div className="bg-gray-50 p-8">
             <h3 className="text-xl font-semibold mb-6">{t('sendMessage')}</h3>
             <form
-              action="https://formspree.io/f/xbdabrdw"
+              action={contactFormAction}
               method="POST"
               className="space-y-4"
             >

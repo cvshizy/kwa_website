@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
 import { getExhibitions, getPressItems } from '@/lib/data';
+import { siteUrl } from '@/lib/site';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://kwmartcenter.com';
+  const baseUrl = siteUrl;
   const locales = ['en', 'zh'];
   const [exhibitions, pressItems] = await Promise.all([
     getExhibitions('zh'),

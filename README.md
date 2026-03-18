@@ -169,6 +169,14 @@ Quick start:
 # 4. Add content through Studio interface
 ```
 
+### Site Runtime Config (Dual Deployment)
+
+```env
+NEXT_PUBLIC_SITE_REGION=global
+NEXT_PUBLIC_SITE_URL=https://kwmartcenter.com
+NEXT_PUBLIC_CONTACT_FORM_ACTION=https://formspree.io/f/xbdabrdw
+```
+
 ## Next Steps
 
 ### For Production Deployment

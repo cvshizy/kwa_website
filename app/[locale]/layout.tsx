@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { siteUrl } from '@/lib/site';
 import "../globals.css";
 
 const locales = ['en', 'zh'];
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : 'K&W Art Center - Contemporary Art Space';
 
   return {
+    metadataBase: new URL(siteUrl),
     title: {
       default: title,
       template: `%s | ${title}`
@@ -39,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: 'website',
       locale: locale === 'zh' ? 'zh_CN' : 'en_US',
-      url: 'https://kwmartcenter.com',
+      url: siteUrl,
       siteName: title,
       title,
       description,

@@ -2,6 +2,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getFeaturedExhibitions, getHomeContent } from '@/lib/data';
+import { absoluteUrl } from '@/lib/site';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      url: `https://kwmartcenter.com${homePath}`,
+      url: absoluteUrl(homePath),
     },
   };
 }
