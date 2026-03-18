@@ -222,6 +222,24 @@ For draft content or preview features, create an API token:
 SANITY_API_READ_TOKEN=your_token_here
 ```
 
+### Webhook Revalidation (Recommended)
+
+To make website updates appear quickly after publishing in Sanity:
+
+1. Set a secret in your app env:
+```env
+SANITY_REVALIDATE_SECRET=your_long_random_secret
+```
+
+2. In Sanity Manage -> API -> Webhooks, add a webhook:
+- URL: `https://your-domain.com/api/revalidate?secret=your_long_random_secret`
+- Trigger on: Create / Update / Delete
+- Dataset: `production`
+
+3. (Dual deployment) If you have global + CN sites, create two webhooks:
+- `https://global-domain/api/revalidate?...`
+- `https://cn-domain/api/revalidate?...`
+
 ## Customization
 
 ### Adding New Fields
