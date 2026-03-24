@@ -51,6 +51,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
     },
+    icons: {
+      icon: '/icon.png',
+      apple: [
+        { url: '/apple-touch-icon.png' },
+        { url: '/apple-touch-icon-precomposed.png' }
+      ]
+    }
   };
 }
 
