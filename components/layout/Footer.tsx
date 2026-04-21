@@ -77,6 +77,15 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-sm text-gray-400">
                 © {new Date().getFullYear()} {brandName}. {t('rights')}.
+                {' '}
+                <a
+                  href="https://beian.miit.gov.cn/#/Integrated/index"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  京ICP备2022005702号-3
+                </a>
               </p>
               {/* Social Media Icons */}
               <div className="flex space-x-6 mt-4 md:mt-0">
