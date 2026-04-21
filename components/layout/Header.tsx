@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -12,7 +13,7 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const brandName = 'K&W ART CENTER';
+  const brandName = locale === 'zh' ? 'KWA金杜艺术中心' : 'K&W Art Center';
 
   const navigation = [
     { name: t('home'), href: '/' },
@@ -34,8 +35,16 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold tracking-tight hover:opacity-70 transition-opacity">
-            {brandName}
+          <Link href="/" className="inline-flex items-center hover:opacity-70 transition-opacity">
+            <Image
+              src="/images/logo-header.png"
+              alt={brandName}
+              width={834}
+              height={211}
+              priority
+              className="h-8 w-auto sm:h-9"
+            />
+            <span className="sr-only">{brandName}</span>
           </Link>
 
           {/* Desktop Navigation */}
