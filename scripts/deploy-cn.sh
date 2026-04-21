@@ -22,10 +22,12 @@ if ! git diff --quiet || ! git diff --cached --quiet; then
   exit 1
 fi
 
-git -c http.version=HTTP/1.1 fetch origin main --quiet
+if ! git -c http.version=HTTP/1.1 fetch origin main --quiet; then
+  echo "Warning: failed to refresh origin/main, using local origin/main ref." >&2
+fi
 
 local_sha="$(git rev-parse "$DEPLOY_REF")"
-origin_sha="$(git rev-parse origin/main)"
+origin_sha="$(git rev-parse --verify origin/main)"
 
 if [[ "$DEPLOY_REF" == "HEAD" && "$local_sha" != "$origin_sha" ]]; then
   echo "HEAD does not match origin/main. Push main before deploying CN." >&2
