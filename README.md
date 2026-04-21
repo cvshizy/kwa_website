@@ -81,6 +81,27 @@ npm run build
 npm run start
 ```
 
+## CN Deployment
+
+The China deployment now uses a clean release model on the Alibaba Cloud server:
+
+```bash
+npm run deploy:cn
+```
+
+What this does:
+- Verifies your local checkout is clean and matches `origin/main`
+- Archives the current commit locally
+- Uploads the release bundle to the China server
+- Runs `npm ci` and `npm run build` on the server
+- Switches `/var/www/kwa_current` to the new release
+- Restarts `pm2` app `kwa-cn`
+
+Notes:
+- The first run may prompt for the server SSH password unless you set up an SSH key
+- Shared production env is stored on the server at `/var/www/shared/kwa_website/.env.local`
+- Old releases are kept for rollback under `/var/www/releases/`
+
 ## Pages
 
 ### Implemented Pages
