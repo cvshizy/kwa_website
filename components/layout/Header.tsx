@@ -42,6 +42,7 @@ export default function Header() {
               width={2656}
               height={643}
               priority
+              unoptimized
               className="h-8 w-auto sm:h-9"
             />
             <span className="sr-only">{brandName}</span>
