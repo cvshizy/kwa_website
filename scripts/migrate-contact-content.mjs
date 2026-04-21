@@ -31,7 +31,7 @@ async function migrate() {
     hours_zh: '周二至周六: 10:00 - 19:00\n周日及周一: 闭馆',
     hours_en: 'Tuesday - Saturday: 10:00 - 19:00\nSunday & Monday: Closed',
     phone: '+86 10 56612254',
-    email: 'info@kwmartcenter.com',
+    email: 'info@kwartcenter.com',
     wechatDescription_zh: '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA金杜艺术中心',
     wechatDescription_en: 'Scan the QR code to follow our WeChat account\nor search for: KWA艺术中心',
     xiaohongshuUrl: 'https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85',

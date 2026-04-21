@@ -347,7 +347,7 @@ export const mockContactContent: ContactPageContent = {
     en: 'Scan the QR code to follow our WeChat account\nor search for: KWA艺术中心',
   },
   phone: '+86 10 56612254',
-  email: 'info@kwmartcenter.com',
+  email: 'info@kwartcenter.com',
   socialUrls: {
     xiaohongshu: 'https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85',
     douyin: 'https://www.douyin.com/user/MS4wLjABAAAAJUfo6FESVKP4HTbA1VIwtxkA-VCoFvTyCWKxDf5M6NuCmJxZuhXMXYU7A8WrLzcg',
