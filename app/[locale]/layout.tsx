@@ -52,10 +52,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
     },
     icons: {
-      icon: '/icon.png',
+      icon: [
+        { url: '/favicon-kwnew.ico', sizes: 'any' },
+        { url: '/icon-kwnew.png', type: 'image/png' }
+      ],
+      shortcut: '/favicon-kwnew.ico',
       apple: [
-        { url: '/apple-touch-icon.png' },
-        { url: '/apple-touch-icon-precomposed.png' }
+        { url: '/apple-touch-icon-kwnew.png' },
+        { url: '/apple-touch-icon-precomposed-kwnew.png' }
       ]
     }
   };
