@@ -53,13 +53,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     icons: {
       icon: [
-        { url: '/favicon-kwnew.ico', sizes: 'any' },
-        { url: '/icon-kwnew.png', type: 'image/png' }
+        { url: '/favicon-kwnew-v2.ico', sizes: 'any' },
+        { url: '/icon-kwnew-v2.png', type: 'image/png' }
       ],
-      shortcut: '/favicon-kwnew.ico',
+      shortcut: '/favicon-kwnew-v2.ico',
       apple: [
-        { url: '/apple-touch-icon-kwnew.png' },
-        { url: '/apple-touch-icon-precomposed-kwnew.png' }
+        { url: '/apple-touch-icon-kwnew-v2.png' },
+        { url: '/apple-touch-icon-precomposed-kwnew-v2.png' }
       ]
     }
   };
