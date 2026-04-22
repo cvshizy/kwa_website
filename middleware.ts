@@ -4,8 +4,9 @@ export default createMiddleware({
   // A list of all locales that are supported
   locales: ['en', 'zh'],
 
-  // Used when no locale matches
-  defaultLocale: 'en'
+  // Force the root URL to land on Chinese by default
+  defaultLocale: 'zh',
+  localeDetection: false
 });
 
 export const config = {
