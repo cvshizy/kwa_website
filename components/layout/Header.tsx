@@ -37,10 +37,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="inline-flex items-center hover:opacity-70 transition-opacity">
             <Image
-              src="/images/logo-header-kwnew.png"
+              src="/images/logo-header.png"
               alt={brandName}
-              width={2656}
-              height={643}
+              width={834}
+              height={211}
               priority
               unoptimized
               className="h-8 w-auto sm:h-9"
