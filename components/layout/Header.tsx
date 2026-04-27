@@ -37,10 +37,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="inline-flex items-center hover:opacity-70 transition-opacity">
             <Image
-              src="/images/logo-header.png"
+              src="/images/logo-header.svg"
               alt={brandName}
-              width={834}
-              height={211}
+              width={2612}
+              height={615}
               priority
               unoptimized
               className="h-8 w-auto sm:h-9"
