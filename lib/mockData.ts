@@ -320,7 +320,7 @@ export const mockAboutContent: LocalizedContent = {
 作为中国当代文化的有力传播者，KWA金杜艺术中心通过在全球办公室举办展览，以及与国际艺术机构合作，不断提升中国当代艺术的国际影响力。
 
 地址：北京市朝阳区东三环中路1号环球金融中心东楼201室 100020
-营业时间：周二至周六 10:00-19:00；周日及周一闭馆
+营业时间：周一至周六 10:00-19:00；周日闭馆
 联系方式：+86 10 56612254 | info@kwmartcenter.com`,
   en: `K&W Art Center officially opened on October 20, 2016, in the Global Financial Center within Beijing's CBD. The institution was founded with support from King & Wood Mallesons law firm.
 
@@ -329,7 +329,7 @@ The center is dedicated to presenting professional contemporary art exhibitions 
 As a strong communicator of Chinese contemporary culture internationally, K&W Art Center enhances the global influence of Chinese contemporary art through exhibitions at our worldwide offices and collaborations with international art institutions.
 
 Address: Room 201, East Tower, Global Financial Center, No. 1 East Third Ring Road, Chaoyang District, Beijing 100020
-Hours: Tuesday-Saturday 10:00-19:00; Closed Sunday-Monday
+Hours: Monday-Saturday 10:00-19:00; Closed Sunday
 Contact: +86 10 56612254 | info@kwmartcenter.com`
 };
 
@@ -339,8 +339,8 @@ export const mockContactContent: ContactPageContent = {
     en: 'Room 201, East Tower,\nGlobal Financial Center,\nNo. 1 East Third Ring Road,\nChaoyang District, Beijing 100020',
   },
   hours: {
-    zh: '周二至周六: 10:00 - 19:00\n周日及周一: 闭馆',
-    en: 'Tuesday - Saturday: 10:00 - 19:00\nSunday & Monday: Closed',
+    zh: '周一至周六: 10:00 - 19:00\n周日: 闭馆',
+    en: 'Monday - Saturday: 10:00 - 19:00\nSunday: Closed',
   },
   wechatDescription: {
     zh: '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA金杜艺术中心',

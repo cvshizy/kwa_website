@@ -66,8 +66,8 @@
     "mondayToFriday": "Mon - Fri",
     "saturday": "Saturday",
     "sunday": "Sunday",
-    "tuesdayToSaturday": "Tue - Sat",
-    "sundayMonday": "Sun & Mon",
+    "tuesdayToSaturday": "Mon - Sat",
+    "sundayMonday": "Sunday",
     "closed": "Closed"
   },
   "common": {

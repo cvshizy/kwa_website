@@ -66,8 +66,8 @@
     "mondayToFriday": "周一至周五",
     "saturday": "周六",
     "sunday": "周日",
-    "tuesdayToSaturday": "周二至周六",
-    "sundayMonday": "周日及周一",
+    "tuesdayToSaturday": "周一至周六",
+    "sundayMonday": "周日",
     "closed": "闭馆"
   },
   "common": {
