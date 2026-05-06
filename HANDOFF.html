@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KWA Website Handoff Guide</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --ink: #111111;
+      --muted: #666666;
+      --line: #e7e7e7;
+      --code-bg: #f1f2f4;
+      --accent: #000000;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 20% 0%, #fff 0%, var(--bg) 48%, #eceef2 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+    .paper {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.06);
+      padding: clamp(28px, 5vw, 64px);
+    }
+    h1 {
+      margin: 0 0 28px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    h2 {
+      margin: 48px 0 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      margin: 28px 0 12px;
+      font-size: 19px;
+    }
+    p { margin: 12px 0; color: #222; }
+    ul, ol {
+      margin: 12px 0 20px;
+      padding-left: 1.35rem;
+    }
+    li { margin: 7px 0; }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+      background: var(--code-bg);
+      border-radius: 6px;
+      padding: 0.15em 0.35em;
+    }
+    pre {
+      margin: 16px 0 24px;
+      padding: 18px 20px;
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      background: #101114;
+      color: #f6f7f9;
+    }
+    pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .meta {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media print {
+      body { background: #fff; }
+      .page { padding: 0; }
+      .paper { box-shadow: none; border: 0; border-radius: 0; }
+      pre { white-space: pre-wrap; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="paper">
+      <div class="meta">Generated from HANDOFF.md</div>
+      <h1>KWA Website Handoff Guide</h1>
+      <p>This guide explains how to hand off this project to another developer who will use Claude Code or a normal code editor to work on the site.</p>
+      <h2>Project Overview</h2>
+      <p>This is the KWA Art Center website.</p>
+      <p>Tech stack:</p>
+      <ul>
+      <li>Next.js 14 App Router</li>
+      <li>React 18</li>
+      <li>TypeScript</li>
+      <li>Tailwind CSS</li>
+      <li>next-intl for Chinese/English routing</li>
+      <li>Sanity CMS for content</li>
+      <li>Vercel for global deployment</li>
+      <li>Alibaba Cloud ECS for China deployment</li>
+      </ul>
+      <p>Main local URL:</p>
+      <pre><code class="language-text">http://localhost:3000/zh</code></pre>
+      <p>Production domain:</p>
+      <pre><code class="language-text">https://kwartcenter.com</code></pre>
+      <h2>Recommended Handoff Method</h2>
+      <p>Use GitHub collaboration instead of sending a copied project folder.</p>
+      <p>Recommended workflow:</p>
+      <ol>
+      <li>Invite the collaborator to the GitHub repository.</li>
+      <li>Ask them to create a new branch for each task.</li>
+      <li>Ask them to open a Pull Request.</li>
+      <li>Review and merge the Pull Request yourself.</li>
+      <li>Deploy after review.</li>
+      </ol>
+      <p>Do not ask collaborators to commit directly to <code>main</code> unless they are fully trusted maintainers.</p>
+      <h2>What The Collaborator Needs</h2>
+      <p>The collaborator should install:</p>
+      <ul>
+      <li>Node.js 18 or newer, Node 20 LTS recommended</li>
+      <li>npm</li>
+      <li>Git</li>
+      <li>Claude Code, if they will use Claude Code</li>
+      <li>A Claude.ai or Anthropic Console account</li>
+      <li>Access to GitHub</li>
+      <li>Optional: Sanity access, only if they need to edit CMS schema or content</li>
+      </ul>
+      <p>Claude Code installation:</p>
+      <pre><code class="language-bash">npm install -g @anthropic-ai/claude-code
+claude doctor</code></pre>
+      <p>Anthropic recommends not installing Claude Code with <code>sudo npm install -g</code>.</p>
+      <h2>Clone And Run Locally</h2>
+      <pre><code class="language-bash">git clone git@github.com:cvshizy/kwa_website.git
+cd kwa_website
+npm ci
+cp .env.local.example .env.local
+npm run dev</code></pre>
+      <p>Open:</p>
+      <pre><code class="language-text">http://localhost:3000/zh</code></pre>
+      <p>Verify production build:</p>
+      <pre><code class="language-bash">npm run build
+npm run start</code></pre>
+      <h2>Environment Variables</h2>
+      <p>Never send <code>.env.local</code> directly.</p>
+      <p>Create a local <code>.env.local</code> from <code>.env.local.example</code>:</p>
+      <pre><code class="language-bash">cp .env.local.example .env.local</code></pre>
+      <p>Typical local values:</p>
+      <pre><code class="language-env">NEXT_PUBLIC_SANITY_PROJECT_ID=qiafoam7
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+
+SANITY_API_READ_TOKEN=
+
+NEXT_PUBLIC_SITE_REGION=global
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_CONTACT_FORM_ACTION=https://formspree.io/f/xbdabrdw
+
+SANITY_REVALIDATE_SECRET=local-dev-random-secret
+
+GOOGLE_SITE_VERIFICATION=
+BING_SITE_VERIFICATION=
+BAIDU_SITE_VERIFICATION=</code></pre>
+      <p>Notes:</p>
+      <ul>
+      <li><code>SANITY_API_READ_TOKEN</code> is optional for local frontend work if public reads are available.</li>
+      <li>Use a read-only Sanity token if a token is needed.</li>
+      <li>Do not share Sanity write tokens unless the collaborator must run migration/import scripts.</li>
+      <li>Do not share production deployment secrets by default.</li>
+      </ul>
+      <h2>Files And Directories</h2>
+      <p>Important application directories:</p>
+      <pre><code class="language-text">app/                  Next.js routes and API routes
+components/           Shared React components
+i18n/messages/        Chinese and English UI copy
+lib/                  Data, Sanity, site config helpers
+public/               Static assets
+sanity/               Sanity Studio config and schemas
+scripts/              Import, migration, and deployment scripts
+types/                TypeScript types</code></pre>
+      <p>Important commands:</p>
+      <pre><code class="language-bash">npm run dev       # Start local dev server
+npm run build     # Production build check
+npm run start     # Start production server after build
+npm run lint      # Lint check
+npm run deploy:cn # Deploy China site, do not run without permission</code></pre>
+      <h2>Claude Code Usage</h2>
+      <p>Start Claude Code inside the project:</p>
+      <pre><code class="language-bash">cd kwa_website
+claude</code></pre>
+      <p>Recommended first prompt:</p>
+      <pre><code class="language-text">Read this Next.js project first. Do not modify files. Summarize the project structure, main pages, Sanity CMS integration, local run commands, and deployment flow.</code></pre>
+      <p>Recommended safety prompt before edits:</p>
+      <pre><code class="language-text">Before changing files, give me a short plan. Do not edit .env.local, do not run deployment scripts, do not run scripts/import-* or scripts/migrate-*, and do not commit or push unless I explicitly approve.</code></pre>
+      <p>Recommended task prompt example:</p>
+      <pre><code class="language-text">Change the Chinese homepage label from 特色展览 to 精选展览. Only modify the necessary file. Run npm run build after the change.</code></pre>
+      <h2>Development Workflow</h2>
+      <p>For each task:</p>
+      <pre><code class="language-bash">git checkout main
+git pull origin main
+git checkout -b feature/short-task-name
+npm ci
+npm run dev</code></pre>
+      <p>After making changes:</p>
+      <pre><code class="language-bash">npm run build
+git status --short
+git diff
+git add &lt;changed-files&gt;
+git commit -m &quot;type: short description&quot;
+git push origin feature/short-task-name</code></pre>
+      <p>Then open a Pull Request.</p>
+      <p>Commit message examples:</p>
+      <pre><code class="language-text">fix: update homepage copy
+feat: add press pdf fallback
+chore: update handoff documentation</code></pre>
+      <h2>Sensitive Files And Secrets</h2>
+      <p>Do not copy, zip, commit, or send these:</p>
+      <pre><code class="language-text">.env.local
+.env
+.env*.local
+.vercel
+node_modules
+.next
+.git, if handing off as a zip
+*.pem
+Any server password
+Any Alibaba Cloud AccessKey
+Any Sanity write token
+Any Vercel token
+Any GitHub token</code></pre>
+      <p>The repository already ignores common local and secret files in <code>.gitignore</code>.</p>
+      <h2>Creating A Clean Zip Package</h2>
+      <p>If GitHub access is not available, create a clean zip from the latest committed code:</p>
+      <pre><code class="language-bash">cd &quot;/Users/cvshizy/Library/CloudStorage/Dropbox/AI/kwa_website&quot;
+git status --short
+git archive --format=zip --output ~/Desktop/kwa_website_clean_$(git rev-parse --short HEAD).zip HEAD</code></pre>
+      <p>This zip includes committed project files only.</p>
+      <p>It does not include:</p>
+      <pre><code class="language-text">.env.local
+node_modules
+.next
+.git
+uncommitted local changes</code></pre>
+      <p>If uncommitted changes must be included, commit them to a branch first. Avoid hand-copying the whole folder unless absolutely necessary.</p>
+      <h2>Copying The Current Working Directory</h2>
+      <p>If a one-off folder copy is required and uncommitted changes must be included:</p>
+      <pre><code class="language-bash">cd &quot;/Users/cvshizy/Library/CloudStorage/Dropbox/AI&quot;
+rsync -av \
+  --exclude &quot;.git&quot; \
+  --exclude &quot;node_modules&quot; \
+  --exclude &quot;.next&quot; \
+  --exclude &quot;.vercel&quot; \
+  --exclude &quot;.env&quot; \
+  --exclude &quot;.env.local&quot; \
+  --exclude &quot;.env*.local&quot; \
+  --exclude &quot;.DS_Store&quot; \
+  kwa_website/ ~/Desktop/kwa_website_handoff/
+cd ~/Desktop
+zip -r kwa_website_handoff.zip kwa_website_handoff</code></pre>
+      <p>Before sending the zip, confirm it does not contain secrets.</p>
+      <h2>Sanity Access</h2>
+      <p>Only grant Sanity access if the collaborator needs it.</p>
+      <p>Recommended permissions:</p>
+      <ul>
+      <li>Viewer: can inspect content</li>
+      <li>Editor: can edit content</li>
+      <li>Developer: can edit schemas and Studio behavior</li>
+      <li>Owner: avoid unless they are a long-term maintainer</li>
+      </ul>
+      <p>High-risk scripts that require <code>SANITY_WRITE_TOKEN</code>:</p>
+      <pre><code class="language-text">scripts/import-exhibitions.mjs
+scripts/import-missing-pure-exhibitions.mjs
+scripts/import-press.mjs
+scripts/migrate-about-content.mjs
+scripts/migrate-contact-content.mjs
+scripts/migrate-home-content.mjs
+scripts/migrate-press-content.mjs
+scripts/patch-descriptions.mjs
+scripts/patch-press-covers.mjs</code></pre>
+      <p>Do not run these scripts on production CMS unless the change has been reviewed.</p>
+      <h2>Vercel Deployment</h2>
+      <p>Vercel deploys the global site from GitHub.</p>
+      <p>Most collaborators do not need Vercel access.</p>
+      <p>If access is needed:</p>
+      <ul>
+      <li>Give Viewer for logs-only access.</li>
+      <li>Give Developer if they need to inspect environment variables or deployments.</li>
+      <li>Avoid Owner unless necessary.</li>
+      <li>Do not share Vercel tokens in chat.</li>
+      </ul>
+      <h2>China Deployment</h2>
+      <p>The China site is deployed to Alibaba Cloud ECS with:</p>
+      <pre><code class="language-bash">npm run deploy:cn</code></pre>
+      <p>Do not run this without explicit permission.</p>
+      <p>The deploy script expects:</p>
+      <ul>
+      <li>A clean local Git working tree</li>
+      <li>Local <code>HEAD</code> already pushed to <code>origin/main</code></li>
+      <li>SSH access to the China server</li>
+      <li>Server-side env file at <code>/var/www/shared/kwa_website/.env.local</code></li>
+      <li>Node, npm, pm2, and nginx already configured on the server</li>
+      </ul>
+      <p>Recommended permission model:</p>
+      <ul>
+      <li>Do not share root password.</li>
+      <li>Create a dedicated <code>deploy</code> user if a collaborator must deploy.</li>
+      <li>Use SSH keys instead of passwords.</li>
+      <li>Do not share Alibaba Cloud root account or AccessKey.</li>
+      </ul>
+      <h2>Review Checklist</h2>
+      <p>Before accepting a collaborator&#x27;s change:</p>
+      <pre><code class="language-bash">npm run build
+git diff main...HEAD</code></pre>
+      <p>Check:</p>
+      <ul>
+      <li>No <code>.env.local</code> or secrets are committed</li>
+      <li>No <code>node_modules</code>, <code>.next</code>, or build artifacts are committed</li>
+      <li>No migration/import script was run unintentionally</li>
+      <li>UI copy is correct in both Chinese and English where needed</li>
+      <li>Links and images still work</li>
+      <li>Sanity schema changes are intentional</li>
+      <li>Deployment scripts were not changed unexpectedly</li>
+      </ul>
+      <h2>Maintainer Notes</h2>
+      <p>Current production site:</p>
+      <pre><code class="language-text">https://kwartcenter.com</code></pre>
+      <p>Primary branch:</p>
+      <pre><code class="language-text">main</code></pre>
+      <p>Default local page:</p>
+      <pre><code class="language-text">http://localhost:3000/zh</code></pre>
+      <p>Safe default for collaborators:</p>
+      <ul>
+      <li>Let them edit code on feature branches.</li>
+      <li>Let them open Pull Requests.</li>
+      <li>Keep production deployment under the site owner&#x27;s control.</li>
+      </ul>
+    </article>
+  </main>
+</body>
+</html>
