@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -10,6 +11,14 @@ export const revalidate = 60;
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
+
+function getImageAspectRatio(imageUrl: string) {
+  const dimensions = imageUrl.match(/-(\d+)x(\d+)\.(?:jpg|jpeg|png|webp|gif|avif)(?:\?|$)/i);
+  const width = dimensions ? Number(dimensions[1]) : 16;
+  const height = dimensions ? Number(dimensions[2]) : 9;
+
+  return width > 0 && height > 0 ? `${width} / ${height}` : '16 / 9';
+}
 
 export async function generateStaticParams() {
   const exhibitions = await getExhibitions('en');
@@ -31,6 +40,9 @@ export default async function ExhibitionDetailPage({ params }: Props) {
   const t = await getTranslations('exhibitions');
   const tCommon = await getTranslations('common');
   const currentLocale = locale as 'en' | 'zh';
+  const coverImageStyle = exhibition.coverImage
+    ? ({ '--cover-aspect-ratio': getImageAspectRatio(exhibition.coverImage) } as CSSProperties)
+    : undefined;
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -49,17 +61,21 @@ export default async function ExhibitionDetailPage({ params }: Props) {
     <div className="min-h-screen">
       {/* Hero Image */}
       {exhibition.coverImage ? (
-        <div className="relative h-[60vh] md:h-[70vh]">
+        <div
+          className="relative aspect-[var(--cover-aspect-ratio)] overflow-hidden bg-gray-100 md:aspect-auto md:h-[70vh]"
+          style={coverImageStyle}
+        >
           <Image
             src={exhibition.coverImage}
             alt={exhibition.title[currentLocale]}
             fill
             className="object-cover"
+            sizes="100vw"
             priority
           />
         </div>
       ) : (
-        <div className="h-[40vh] md:h-[50vh] bg-gray-200 flex items-center justify-center">
+        <div className="aspect-[16/9] bg-gray-200 flex items-center justify-center md:aspect-auto md:h-[50vh]">
           <span className="text-gray-400 text-lg">{exhibition.title[currentLocale]}</span>
         </div>
       )}
