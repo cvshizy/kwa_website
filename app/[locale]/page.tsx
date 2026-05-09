@@ -99,7 +99,7 @@ export default async function Home({ params }: Props) {
               href={`/exhibitions/${exhibition.slug}`}
               className="group block rounded-[22px] bg-white/80 backdrop-blur border border-black/5 p-3"
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[16px] bg-black/5">
+              <div className="relative aspect-[1.4/1] overflow-hidden rounded-[16px] bg-black/5">
                 {exhibition.coverImage && (
                   <Image
                     src={exhibition.coverImage}

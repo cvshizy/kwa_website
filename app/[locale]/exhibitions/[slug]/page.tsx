@@ -62,7 +62,7 @@ export default async function ExhibitionDetailPage({ params }: Props) {
       {/* Hero Image */}
       {exhibition.coverImage ? (
         <div
-          className="relative aspect-[var(--cover-aspect-ratio)] overflow-hidden bg-gray-100 md:aspect-auto md:h-[70vh]"
+          className="relative aspect-[var(--cover-aspect-ratio)] overflow-hidden bg-gray-100"
           style={coverImageStyle}
         >
           <Image
@@ -75,7 +75,7 @@ export default async function ExhibitionDetailPage({ params }: Props) {
           />
         </div>
       ) : (
-        <div className="aspect-[16/9] bg-gray-200 flex items-center justify-center md:aspect-auto md:h-[50vh]">
+        <div className="aspect-[16/9] bg-gray-200 flex items-center justify-center">
           <span className="text-gray-400 text-lg">{exhibition.title[currentLocale]}</span>
         </div>
       )}
@@ -84,7 +84,7 @@ export default async function ExhibitionDetailPage({ params }: Props) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="space-y-6">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {exhibition.title[currentLocale]}
             </h1>
             <p className="text-xl text-gray-600 mb-2">{exhibition.artist[currentLocale]}</p>
