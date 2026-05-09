@@ -6,6 +6,7 @@
  */
 
 import { createClient } from '@sanity/client';
+import { randomUUID } from 'crypto';
 
 const client = createClient({
   projectId: 'qiafoam7',
@@ -20,20 +21,45 @@ if (!process.env.SANITY_WRITE_TOKEN) {
   process.exit(1);
 }
 
+function key() {
+  return randomUUID().replace(/-/g, '').slice(0, 12);
+}
+
+function textToPortableText(text) {
+  return text
+    .split(/\n+/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph) => ({
+      _type: 'block',
+      _key: key(),
+      style: 'normal',
+      markDefs: [],
+      children: [
+        {
+          _type: 'span',
+          _key: key(),
+          text: paragraph.replace(/\n/g, '\n'),
+          marks: [],
+        },
+      ],
+    }));
+}
+
 async function migrate() {
   console.log('\n🔄 开始迁移联系页内容到 Sanity 单例 contactPage...\n');
 
   await client.createOrReplace({
     _id: 'contactPage',
     _type: 'contactPage',
-    address_zh: '北京市朝阳区东三环中路1号\n环球金融中心东楼201',
-    address_en: 'Room 201, East Tower,\nGlobal Financial Center,\nNo. 1 East Third Ring Road,\nChaoyang District, Beijing 100020',
-    hours_zh: '周二至周六: 10:00 - 19:00\n周日及周一: 闭馆',
-    hours_en: 'Tuesday - Saturday: 10:00 - 19:00\nSunday & Monday: Closed',
+    address_zh: textToPortableText('北京市朝阳区东三环中路1号\n环球金融中心东楼201'),
+    address_en: textToPortableText('Room 201, East Tower,\nGlobal Financial Center,\nNo. 1 East Third Ring Road,\nChaoyang District, Beijing 100020'),
+    hours_zh: textToPortableText('周一至周六: 10:00 - 19:00\n周日: 闭馆'),
+    hours_en: textToPortableText('Monday - Saturday: 10:00 - 19:00\nSunday: Closed'),
     phone: '+86 10 56612254',
     email: 'info@kwartcenter.com',
-    wechatDescription_zh: '请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA金杜艺术中心',
-    wechatDescription_en: 'Scan the QR code to follow our WeChat account\nor search for: KWA艺术中心',
+    wechatDescription_zh: textToPortableText('请扫描二维码来关注我们的微信公众号\n或者在微信中搜索我们的公众号名称：KWA金杜艺术中心'),
+    wechatDescription_en: textToPortableText('Scan the QR code to follow our WeChat account\nor search for: KWA Art Center'),
     xiaohongshuUrl: 'https://www.xiaohongshu.com/user/profile/631072a1000000000f004e85',
     douyinUrl: 'https://www.douyin.com/user/MS4wLjABAAAAJUfo6FESVKP4HTbA1VIwtxkA-VCoFvTyCWKxDf5M6NuCmJxZuhXMXYU7A8WrLzcg',
     weiboUrl: 'https://weibo.com/u/6029611887',

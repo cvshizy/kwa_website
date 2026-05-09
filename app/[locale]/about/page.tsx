@@ -1,5 +1,5 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { PortableText } from '@portabletext/react';
+import { AlignedPortableText } from '@/components/portable-text/AlignedPortableText';
 import TeamMemberCard from '@/components/team/TeamMemberCard';
 import { getAboutContent, getTeamMembers } from '@/lib/data';
 
@@ -21,7 +21,7 @@ export default async function AboutPage({ params }: Props) {
       <h1 className="text-4xl md:text-5xl font-bold mb-12">{t('title')}</h1>
 
       <div className="prose prose-lg max-w-none mb-16 text-gray-700 leading-relaxed">
-        <PortableText value={content} />
+        <AlignedPortableText value={content} />
       </div>
 
       {/* Team Section */}

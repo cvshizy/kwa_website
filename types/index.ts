@@ -9,6 +9,11 @@ export interface LocalizedPortableText {
   zh: any[];
 }
 
+export interface LocalizedRichTextContent {
+  en: string | LocalizedPortableText['en'];
+  zh: string | LocalizedPortableText['zh'];
+}
+
 export interface Exhibition {
   id: string;
   slug: string;
@@ -50,9 +55,9 @@ export interface AboutPageContent {
 }
 
 export interface ContactPageContent {
-  address: LocalizedContent;
-  hours: LocalizedContent;
-  wechatDescription: LocalizedContent;
+  address: LocalizedRichTextContent;
+  hours: LocalizedRichTextContent;
+  wechatDescription: LocalizedRichTextContent;
   phone: string;
   email: string;
   socialUrls: {

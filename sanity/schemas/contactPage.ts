@@ -1,4 +1,5 @@
 import { defineType, defineField } from 'sanity';
+import { alignedPortableText } from './alignedPortableText';
 
 export default defineType({
   name: 'contactPage',
@@ -8,29 +9,29 @@ export default defineType({
     defineField({
       name: 'address_zh',
       title: '地址（中文）',
-      type: 'text',
-      rows: 4,
+      type: 'array',
+      of: alignedPortableText,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'address_en',
       title: '地址（英文）',
-      type: 'text',
-      rows: 4,
+      type: 'array',
+      of: alignedPortableText,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'hours_zh',
       title: '营业时间（中文）',
-      type: 'text',
-      rows: 3,
+      type: 'array',
+      of: alignedPortableText,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'hours_en',
       title: '营业时间（英文）',
-      type: 'text',
-      rows: 3,
+      type: 'array',
+      of: alignedPortableText,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -48,15 +49,15 @@ export default defineType({
     defineField({
       name: 'wechatDescription_zh',
       title: '微信弹窗说明（中文）',
-      type: 'text',
-      rows: 3,
+      type: 'array',
+      of: alignedPortableText,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'wechatDescription_en',
       title: '微信弹窗说明（英文）',
-      type: 'text',
-      rows: 3,
+      type: 'array',
+      of: alignedPortableText,
       validation: (Rule) => Rule.required(),
     }),
     defineField({

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { PortableText } from '@portabletext/react';
+import { AlignedPortableText } from '@/components/portable-text/AlignedPortableText';
 import { getExhibitionBySlug, getExhibitions } from '@/lib/data';
 import ExhibitionGrid from '@/components/exhibitions/ExhibitionGrid';
 
@@ -95,7 +95,7 @@ export default async function ExhibitionDetailPage({ params }: Props) {
 
           {exhibition.description?.[currentLocale] && (
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-              <PortableText value={exhibition.description[currentLocale]} />
+              <AlignedPortableText value={exhibition.description[currentLocale]} />
             </div>
           )}
 

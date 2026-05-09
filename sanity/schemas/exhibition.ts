@@ -1,4 +1,5 @@
 import { defineType, defineField } from 'sanity';
+import { alignedPortableText } from './alignedPortableText';
 
 export default defineType({
   name: 'exhibition',
@@ -43,13 +44,13 @@ export default defineType({
       name: 'description_en',
       title: '描述（英文）',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: alignedPortableText,
     }),
     defineField({
       name: 'description_zh',
       title: '描述（中文）',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: alignedPortableText,
     }),
     defineField({
       name: 'startDate',

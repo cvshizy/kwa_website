@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import SocialMaskIcon from '@/components/ui/SocialMaskIcon';
+import { RichText } from '@/components/portable-text/AlignedPortableText';
 import { ContactPageContent } from '@/types';
 import { contactFormAction } from '@/lib/site';
 
@@ -25,7 +26,7 @@ export default function ContactPageClient({ locale, content }: ContactPageClient
           <div className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold mb-3">{t('address')}</h3>
-              <p className="text-gray-700 whitespace-pre-line">{content.address[locale]}</p>
+              <RichText value={content.address[locale]} className="text-gray-700" />
             </div>
 
             <div>
@@ -40,9 +41,7 @@ export default function ContactPageClient({ locale, content }: ContactPageClient
 
             <div>
               <h3 className="text-xl font-semibold mb-3">{t('hours')}</h3>
-              <div className="text-gray-700 whitespace-pre-line">
-                {content.hours[locale]}
-              </div>
+              <RichText value={content.hours[locale]} className="text-gray-700" />
             </div>
 
             <div>
@@ -166,9 +165,7 @@ export default function ContactPageClient({ locale, content }: ContactPageClient
                 className="object-contain"
               />
             </div>
-            <p className="text-sm text-gray-600 mb-4 whitespace-pre-line">
-              {content.wechatDescription[locale]}
-            </p>
+            <RichText value={content.wechatDescription[locale]} className="text-sm text-gray-600 mb-4" />
             <button
               onClick={() => setShowWechatQR(false)}
               className="px-6 py-2 bg-black text-white text-sm hover:bg-gray-800 transition-colors rounded"
