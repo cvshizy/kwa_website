@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = siteName[currentLocale];
   const description = siteDescription[currentLocale];
+  const previewImage = absoluteUrl('/images/og/kwa-og-image.png');
   const otherVerification = {
     ...(siteVerification.bing ? { 'msvalidate.01': siteVerification.bing } : {}),
     ...(siteVerification.baidu ? { 'baidu-site-verification': siteVerification.baidu } : {})
@@ -57,11 +58,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: title,
       title,
       description,
+      images: [
+        {
+          url: previewImage,
+          width: 1200,
+          height: 630,
+          alt: title
+        }
+      ]
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [previewImage]
     },
     verification: {
       google: siteVerification.google || undefined,
@@ -106,6 +116,7 @@ export default async function LocaleLayout({
         alternateName: currentLocale === 'zh' ? siteName.en : siteName.zh,
         url: siteUrl,
         logo: absoluteUrl('/icon-kwnew-v2.png'),
+        image: absoluteUrl('/images/og/kwa-og-image.png'),
         email: siteEmail,
         telephone: sitePhone,
         sameAs: [...siteSocialLinks],
@@ -124,6 +135,7 @@ export default async function LocaleLayout({
         url: siteUrl,
         name: siteName[currentLocale],
         description: siteDescription[currentLocale],
+        image: absoluteUrl('/images/og/kwa-og-image.png'),
         inLanguage: currentLocale === 'zh' ? 'zh-CN' : 'en-US',
         publisher: {
           '@id': `${siteUrl}#organization`

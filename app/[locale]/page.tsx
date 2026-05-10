@@ -2,7 +2,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getFeaturedExhibitions, getHomeContent } from '@/lib/data';
-import { absoluteUrl } from '@/lib/site';
+import { absoluteUrl, siteName } from '@/lib/site';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -13,6 +13,8 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const homePath = `/${locale}`;
+  const currentLocale = locale as 'en' | 'zh';
+  const previewImage = absoluteUrl('/images/og/kwa-og-image.png');
 
   return {
     alternates: {
@@ -25,6 +27,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       url: absoluteUrl(homePath),
+      images: [
+        {
+          url: previewImage,
+          width: 1200,
+          height: 630,
+          alt: siteName[currentLocale]
+        }
+      ]
     },
   };
 }
